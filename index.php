@@ -2,7 +2,6 @@
     require dirname(__FILE__).'/Librairie/Autoloader.php';
     
     new Autoloader();
-    //test salam la famille
     /* From : Marc
      * Message : Il est important de garder cette include 
      *          sous l'instanciation de Autoloader car
