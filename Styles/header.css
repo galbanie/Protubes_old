@@ -1,0 +1,205 @@
+/* 
+    Document   : header
+    Created on : 2013-09-07, 15:47:38
+    Author     : galbanie
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+header{
+    background-image: url('images/Bg-header.png');
+    height: 40px;
+    min-width: 1400px;
+    padding: 10px 0;
+    border-width: 1px 0 1px 0;
+    border-color: #E4E4E4;
+    border-style: solid;
+}
+
+header div{
+    float: left;
+    display: inline-block;
+}
+
+header div + div{
+    padding: 4px 0;
+}
+
+header form, header form *{
+    margin : 0 !important;
+}
+
+#logo{
+    margin-left: 80px;
+}
+
+#barreRecherche{
+    width: 520px;
+    margin-left: 50px;
+}
+
+#barreRecherche form input[type="search"]{
+    width: 437px;
+    height: 18px !important;
+    font-family: "PT Sans Narrow","Arial Narrow",Verdana,Geneva,sans-serif !important;
+}
+
+#barreRecherche form input[type="submit"]{
+    padding:7px 30px !important;
+}
+
+#btnSearchBarreRecherche{
+    height: 34px !important;
+    margin-left: -7px !important;
+    background-image: url('images/Icones/icon_search.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#btn-uploadVideo{
+    margin-left: 20px;
+}
+
+#btn-uploadVideo input{
+    background-color: #fd2626;
+    color: #FFFFFF;
+}
+
+#btn-espaceMembre{
+    float: right;
+    margin-right: 80px;
+}
+
+#btn-espaceMembre form input[type="submit"]{
+    background-color: #004ab3;
+    color: #FFFFFF;
+}
+
+/*  Bouton dans le header controle membre */
+#espaceBtnMembre{
+     /*width: 140px;*/
+     min-width: 140px;
+     max-width: 210px;
+     height: 30px;
+     background-color: #004ab3;
+     border-width: 1px 1px 1px 1px;
+     border-style: solid;
+     border-color: #080808;
+}
+
+#espaceBtnMembre ul{
+    height: 30px;
+}
+
+#espaceBtnMembre ul.ul-niveau1 li{
+    display: inline-block;
+    height: 100%;
+    list-style-type: none;
+    position:relative;
+}
+
+#espaceBtnMembre ul ul{
+    /*display: none;*/
+    position: absolute;
+    right: -1px;
+    top:30px;
+    z-index: 777;
+    min-width: 140px;
+     
+}
+
+#espaceBtnMembre ul ul li{
+    width: 100%;
+    height: 30px;
+      
+}
+
+#espaceBtnMembre ul li.li-1{
+    float: left;
+    min-width: 120px;
+}
+
+#espaceBtnMembre ul li.li-2{
+    float: left;
+    width: 20px;
+}
+
+#espaceBtnMembre ul.ul-niveau1 li:hover ul.ul-niveau2{
+    /*display: block;*/ 
+}
+
+.lien-img-membre{
+    width: 120px;
+    height: 30px;
+    text-decoration: none;
+}
+
+.img-user{
+    height: 28px;
+    width: 30px;
+    display: inline-block;
+    border:1px solid #E4E4E4;
+}
+
+.name-user{
+    width: 70%;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: smaller;
+    font-weight: bolder;
+    color: #FFFFFF;
+}
+
+#menuDeroulant{
+    background-image: url('images/Icones/icons_r2_c2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#menuDeroulant:checked,
+#menuDeroulant:active{
+    background: url('images/Icones/icons-puceVersBas.png') no-repeat center;
+}
+
+#menuDeroulant a{
+    font-size: smaller;
+    color: #000000;
+    display: block;
+    /*width: 71.5%;*/
+    /*width: 200px;*/
+    text-align: left;
+    padding: 7px 0px 6px 40px;
+    background-color: #E4E4E4;
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+    border-color: #080808;
+    background-position: 10% 50%;
+    background-repeat: no-repeat;
+}
+
+#menuDeroulant a:hover{
+    color: #FFFFFF;
+    background-color: #fd2626;
+}
+
+#aDeconnexion{
+    border-width: 0 1px 1px 1px !important;
+    background-image: url('images/Icones/icons-eteindre.png');
+}
+
+#aSettings{
+    background-image: url('images/Icones/icons-modifeSettings.png');   
+}
+
+#aGestionnaire{
+    background-image: url('images/Icones/icons-film.png');   
+}
+
+#aAlerte{
+    background-image: url('images/Icones/icons-alert.png');
+}
+
+#aProfil{
+    background-image: url('images/Icones/icons-profile.png');
+}

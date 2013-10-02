@@ -1,0 +1,524 @@
+/* 
+    Document   : main
+    Created on : 2013-09-08, 16:53:37
+    Author     : galbanie
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#global{
+    min-width: 1400px;
+}
+
+#principal{
+    margin: 0 80px;
+}
+
+#principal > div{
+    float: left;
+    display: inline-block;
+    
+}
+
+#sidebarGauche{
+    /*width: 210px;*/
+    width: 15%;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #E4E4E4;
+}
+
+#centre{
+    /*width: 632px;*/
+    width: 40%;
+    min-height: 500px;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #E4E4E4;
+}
+
+#sidebarDroit{
+    /*width: 310px;*/
+    width: 25%;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #E4E4E4;
+}
+
+#centreUnique{
+    /*width: 1110px;*/
+    width: 82%;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #E4E4E4;
+}
+
+/* Section connexion et panel membre */
+
+#membre-main{
+    
+}
+
+#membre-main hr{
+    margin: 0 !important;
+}
+
+#membre-main>div{
+    float: left;
+    display: inline-block;
+}
+
+#membre-section-msg{
+    width: 399px;
+    padding: 0 10px;
+}
+
+#membre-section-msg form{
+    margin: 0;
+}
+
+#membre-section-msg > *{
+    padding: 0 10px;
+}
+
+#membre-section-msg > div{
+    width: 100%;
+    padding: 10px 0 20px 0;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #E4E4E4;
+}
+
+#membre-section-msg>div h2{
+    padding: 2px 10px;
+    background-color: #fd2626;
+    color: #FFFFFF;
+    box-shadow: 7px 7px 5px #E4E4E4;
+}
+
+#membre-section-msg-btnSbmit input[type="submit"]{
+    color: #FFFFFF;
+    background-color: #004ab3;
+    padding: 10px 5px;
+    font-size: medium;
+}
+
+#membre-section-form{
+    width: 690px;
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: #E4E4E4;
+}
+
+#membre-section-form > *{
+    padding: 0 10px;
+}
+
+#membre-section-form legend{
+    font-size: 30px;
+    text-shadow:2px 1px #A8A8A8;
+}
+
+#membre-section-form div{
+    margin: 0 0 10px 0;
+}
+
+#membre-section-form div label{
+    font-size: large;
+    padding: 0 10px;
+}
+
+#membre-section-form div label a{
+    margin-left: 10px;
+}
+
+#membre-section-form div input{
+    width: 640px;
+    font-size: large;
+    margin: 0 10px;
+}
+
+#formConnexion{
+    min-height: 400px;
+}
+
+.btn-send input[type="submit"],
+.btn-send input[type="button"],
+.btn-send input[type="reset"]{
+    width: 140px !important;
+    height: 40px !important;
+    color: #FFFFFF;
+    font-size: small;
+    /*background-image: url('images/btn_submit.png');
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    background-color: #004ab3;
+    border-radius: 5.5px;
+    
+}
+
+.btn-send input[type="submit"]:hover,
+.btn-send input[type="submit"]:active,
+.btn-send input[type="button"]:hover,
+.btn-send input[type="button"]:active,
+.btn-send input[type="reset"]:hover,
+.btn-send input[type="reset"]:active{
+    color: #E4E4E4;
+    /*background-image: url('images/btn_submit_hov.png');
+    background-repeat: no-repeat;*/
+    background-color: #fd2626;
+    
+}
+
+#form-div-condition label{
+    display: inline-block;
+    width: 89.9% !important;
+}
+
+#form-div-condition input{
+    width: auto !important;
+}
+
+.correct {
+  border-color: rgba(68, 191, 68, 0.75);
+}
+ 
+.correct:focus {
+  border-color: rgba(68, 191, 68, 0.75);
+  -moz-box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+  -webkit-box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+  box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+}
+ 
+.incorrect {
+  border-color: rgba(191, 68, 68, 0.75);
+}
+ 
+.incorrect:focus {
+  border-color: rgba(191, 68, 68, 0.75);
+  -moz-box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+  -webkit-box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+  box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+}
+ 
+.tooltip {
+    margin: 5px 10px 0 10px;
+    padding: 0 20px 0 35px !important;
+    border: 1px solid #555;
+    background-color: #CCC;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: url('images/Icones/icons-attention.png') no-repeat #CCC;
+    background-position: 10px 50%;
+}
+
+/* ||||||||  section centre page default  ||||||||| */
+
+#centreBlockVideopromo{
+    width: 100%;
+    height: 350px;
+    margin-top: 0 !important;
+    position: relative;
+    display: block;
+    /*border: 1px solid #555;*/
+    border-width: 1px 0 1px 0;
+    border-color: #E4E4E4;
+    border-style: solid;
+}
+
+#centreBlockVideopromo div{
+    width: 100%;
+    padding: 0;
+    display: block;
+    /*border: 1px solid #CCC;*/
+}
+
+#videopromo{
+    height: 70%;
+}
+
+#videopromoinfo{
+    height: 20%;
+}
+
+#centreVideosSlide{
+    padding: 0 !important;
+    width: 100%;
+    height: 140px;
+    border-width: 0 0 1px 0;
+    border-color: #E4E4E4;
+    border-style: solid;
+}
+
+#centreVideosPopulaires{
+    width: 100%;
+    padding: 0 !important;
+}
+
+#centreVideosPopulaires div{
+    float: left;
+    display: inline-block;
+    width: 49.9%;
+    height: 160px;
+    padding: 0;
+    /*border: 1px solid #555;*/
+    border-width: 0 0 1px 0;
+    border-color: #E4E4E4;
+    border-style: solid;
+}
+
+#centreVideosPopulaires h2{
+    border-width: 0 0 1px 0;
+    border-color: #E4E4E4;
+    border-style: solid;
+}
+
+.divGauche{
+    /*margin-left: 5px !important;*/
+    border-width: 0 1px 1px 0 !important;
+    border-color: #E4E4E4;
+    border-style: solid;
+}
+
+/* ||||||||  section sidebar droit page default  ||||||||| */
+
+#gaucheCategorieVideo{
+    width: 100%;
+    height: 320px;
+    padding: 0 !important;
+    border-width: 1px 0 1px 0;
+    border-color: #E4E4E4;
+    border-style: solid;
+}
+
+#gaucheVideosMembre{
+    width: 100%;
+    height: 210px;
+    padding: 0 !important;
+    border-width: 1px 0 1px 0;
+    border-color: #E4E4E4;
+    border-style: solid;
+}
+
+/* ||||||||  section sidebar droit page default  ||||||||| */
+
+#DroitEspacePub{
+    width: 100%;
+    height: 280px;
+    padding: 0 !important;
+    border-width: 1px 0 1px 0;
+    border-color: #E4E4E4;
+    border-style: solid;
+}
+
+/* ||||||||| section panel membre |||||||||*/
+
+#panelMembreControle{
+    width: 17.9%;
+    min-height: 100%;
+    padding: 0 !important;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #E4E4E4;
+}
+
+#panelMembreControle *{
+    /*padding: 0 !important;*/
+}
+
+#menuPanelMembre{
+    width: 100%;
+}
+
+#menuPanelMembre a{
+    display: block;
+    width: 80%;
+    color:#FFFFFF;
+    background-color: #004ab3;
+    padding: 10px 0 10px 20% !important;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #E4E4E4;
+    background-size: 9%;
+    background-position: 7% 50%;
+    background-repeat: no-repeat;
+}
+
+#menuPanelMembre a:hover,
+.lienCourant{
+    color:#FFFFFF !important;
+    background-color: #fd2626 !important;
+    font-weight: bolder !important;
+}
+
+#lienDeconnexionMembre{
+    background-image: url('images/Icones/icons-eteindre.png');
+}
+
+#lienSettingsMembre{
+    background-image: url('images/Icones/icons-modifeSettings.png');   
+}
+
+#lienGestionnaireMembre{
+    background-image: url('images/Icones/icons-film.png');   
+}
+
+#lienAlerteMembre{
+    background-image: url('images/Icones/icons-alert.png');
+}
+
+#lienProfilMembre{
+    background-image: url('images/Icones/icons-profile.png');
+}
+
+#lienGeneralMembre{
+    background-image: url('images/Icones/icons-general.png');
+}
+
+#panelMembreMain{
+    width: 82.1%;
+    min-height: 100%;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #E4E4E4;
+}
+
+#panelMembreInfoBar{
+    width: 99.1%;
+    padding: 10px 5px !important;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #E4E4E4;
+}
+
+#panelMembreContent{
+    width: 98%;
+    padding-left: 20px;
+}
+
+#panelMembreContent form >div{
+    float: left;
+    display: inline-block;
+}
+
+.titreSectionMembre{
+    color: #FFFFFF;
+    padding: 7px 20px 3px 20px;
+    margin-bottom: 20px;
+    width: 95.5%;
+    font-weight: bolder;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #E4E4E4;
+    background-color: #fd2626;
+}
+
+#panelMembreContent #imageMembreProfile, #panelMembreContent #stateMembreProfile{
+    width: 210px;    
+}
+
+#imageMembreProfile{
+    height: 280px;
+    margin-left: 20px;
+    border: 4px double #A8A8A8;
+}
+
+#stateMembreProfile{
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 13px;
+    height: 347px;
+    background-color: #004ab3;
+    border: 1px solid #A8A8A8;
+}
+
+#imageMembreProfile img{
+    width: 210px;
+    height: 280px;
+}
+
+#imageMembreProfile a{
+    position: absolute;
+    display: none;
+    color : #FFFFFF;
+    font-size: small;
+    font-weight: bold;
+    padding: 5px 5px;
+    margin: -40px 43px 0 43px;
+    background-color: #004ab3;
+    border: 1px solid #E4E4E4;
+}
+
+#imageMembreProfile a:hover{
+    background-color:#fd2626;
+}
+
+#information1{
+    width: 70%;
+    margin-left: 30px;
+}
+
+#information1>div,#information2>div{
+    margin-bottom: 10px;
+}
+
+.labelInfo{
+    font-size: large;
+    font-weight: bolder;
+}
+
+.inputInfo{
+    width: 95%;
+    font-size: large;
+    height: 30px;
+}
+
+.buttonEdit{
+    position: absolute;
+    width: 70px !important;
+    margin-left: -75px;
+    margin-top: 7px;
+    z-index: 999;
+    color: #fff;
+    background-color: #004ab3;
+    border: 1px solid #E4E4E4;
+}
+
+.buttonEdit:hover{
+    background-color: #fd2626;
+}
+
+#information2{
+    width: 70%;
+    margin-left: 20px;
+}
+
+#confirEditMembreProfile{
+    float: none !important;
+    width: 420px;
+    display: block !important;
+    margin: 5px auto 10px auto;
+}
+
+#confirEditMembreProfile input{
+    
+}
+
+/*|||||||||||| section etat   |||||||||||||*/
+
+#etat{
+    
+}
+
+#etat h2{
+    margin: 10px 0;
+    padding: 2px 10px;
+    background-color: #004ab3;
+    color: #FFFFFF;
+    box-shadow: 7px 7px 5px #E4E4E4;
+}
+
+#etat p{
+    
+}

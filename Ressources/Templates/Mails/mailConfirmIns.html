@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            html{
+                margin:0;
+                padding: 0;
+                font-size: 100%;
+            }
+            body{}
+            header{
+                background-color: #A8A8A8;
+                height: 40px;
+                padding: 10px 0;
+                border-width: 1px 0 1px 0;
+                border-color: #E4E4E4;
+                border-style: solid;
+            }
+            #content{
+                padding: 10px;
+                border-width: 1px 1px 1px 1px;
+                border-color: #E4E4E4;
+                border-style: solid;
+            }
+            #prenom, #nom{font-weight: bolder;}
+            footer{
+                background-color: #A8A8A8;
+                padding: 3px;
+                margin-top: 3px;
+            }
+            footer p{text-align: center; color: #FFFFFF;}
+            footer a{
+                font-size: medium;
+                color: #FFFFFF;
+            }
+            a{
+                outline: 0;
+                color: #DE3917;
+                text-decoration: none;
+            }
+            a:hover,a:active{
+                color: #0088cc;    
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <!--h2>Protubes</h2-->
+            <img alt="Protubes." src="Ressources/Images/Logo/Protubes-160x40_new.png" />
+        </header>
+        <div id="content">
+            <p>
+                Cher <span id="prenom">%1$s</span> <span id="nom">%2$s</span>,<br />
+                Nous sommes heureux de vous comptez parmis nous.<br />
+                Veuillez cliquer sur le lien ci-dessous pour valider votre inscription.
+            </p>
+            <a href="%4$s">Valider votre inscription</a>
+        </div>
+        <footer>
+            <p><a href="%3$s">Protubes</a></p>
+        </footer>
+    </body>
+</html>

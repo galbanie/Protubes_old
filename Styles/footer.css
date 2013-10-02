@@ -1,0 +1,68 @@
+/* 
+    Document   : footer
+    Created on : 2013-09-08, 18:40:20
+    Author     : galbanie
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+footer{
+    width:99.4%;
+    height: 30px;
+    padding:10px 0 10px 10px;
+    background-image: url('images/Bg-footer-fonce.png');
+    clear: both;
+    margin-top: 40px;
+}
+
+#div-langue{
+    float:left;
+    display: inline-block;
+}
+
+#div-langue *{
+    display: inline-block;
+    font-size: 14px;
+}
+
+#div-langue form input[type="submit"]{
+    width: 80px;
+    padding: 5px 3px;
+    color: #FFFFFF;
+    font-weight: bolder;
+    text-shadow: 1px 1px #000000;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn-lang-fr{
+    background-image: url('images/btn-drap-fr.png');
+}
+
+.btn-lang-en{
+    background-image: url('images/btn-drap-en.png');
+}
+
+.footer-div{
+    /*position: fixed;*/
+    width: 86%;
+    left: 12%;
+    padding: 0;
+    margin: 0;
+}
+
+#footercopy{
+    margin: 6px 0;
+    color: #000000;
+    font-size: small;
+    text-align: center;
+}
+
+#footercopy a{
+    text-decoration: none;
+    color: #000000;
+}
+
+#footercopy a:hover, #footercopy a:active{
+    color: #FFFFFF;
+}
