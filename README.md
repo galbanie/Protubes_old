@@ -1,4 +1,4 @@
 Protubes
 ========
 
-Site de partages de vidéos pro Yanis
+Site de partages de vidéos pro

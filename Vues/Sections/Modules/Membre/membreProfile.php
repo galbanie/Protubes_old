@@ -1,11 +1,3 @@
-<?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-?>
 <h1 class="titreSectionMembre">Profile</h1>
 <form id="formProfileMembre" method="POST" action="">
     <div id="imageMembreProfile">
