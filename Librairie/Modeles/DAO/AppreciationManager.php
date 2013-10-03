@@ -37,11 +37,11 @@ class AppreciationManager extends DAORelation{
             else return false;
             
             $sql = "INSERT INTO appreciation$type SET
-                     id$type = :idT, idUsager = :idU,appreciation = :app";
+                     id$type = :idT, idMembre = :idM,appreciation = :app";
             /* @var $requete PDOStatement */
             $requete = $this->bd->prepare($sql);
             $requete->bindValue(':idT',$modele->getId());
-            $requete->bindValue(':idU',$membre->getId());
+            $requete->bindValue(':idM',$membre->getId());
             $requete->bindValue(':app',(boolean)$appreciation,PDO::PARAM_BOOL);
 
             $requete->execute();
@@ -88,7 +88,7 @@ class AppreciationManager extends DAORelation{
         try{
             $type = $this->checkType($type);
             if(!$type) return false;
-            $requete = $this->bd->query("SELECT appreciation FROM appreciation$type WHERE id$type = '$idType' AND idUsager = '$idMembre'");			
+            $requete = $this->bd->query("SELECT appreciation FROM appreciation$type WHERE id$type = '$idType' AND idMembre = '$idMembre'");			
             $resultat = $requete->fetch(PDO::FETCH_ASSOC);
 
             if($resultat){

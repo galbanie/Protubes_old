@@ -38,17 +38,21 @@ class ControleurMembre extends Controleur{
                             Donnees::ajouterValeur('changeImage.php','panelMembreContent');
                         break;
                         case "deconnexion":
-                            unset($_SESSION['usager']);
+                            unset($_SESSION['membre']);
                             unset($_SESSION['compte']);
                             header("Location: ?page=membre");
                             exit();
                         break;
                         default:
                             Donnees::ajouterValeur('infoBarMembre.php','infoBarMembre');
+                            Donnees::ajouterValeur('membreGeneral.php','panelMembreContent');
                         break;
                     }
                 }
-                else Donnees::ajouterValeur('infoBarMembre.php','infoBarMembre');
+                else {
+                    Donnees::ajouterValeur('infoBarMembre.php','infoBarMembre');
+                    Donnees::ajouterValeur('membreGeneral.php','panelMembreContent');
+                }
             }
             else{
                 if(isset($_POST['connexion'])){
@@ -56,15 +60,17 @@ class ControleurMembre extends Controleur{
                         if(filter_var($_POST['connexion']['email'], FILTER_VALIDATE_EMAIL)){
                             $membre = $this->effectuerConnexion();
                             if ($membre){
-                                $compte = $this->compteManager->get('idUsager', $membre->getId());
+                                $compte = $this->compteManager->get('idMembre', $membre->getId());
                                 if($compte){
                                     $_SESSION['membre'] = $membre;
                                     //$_SESSION['membre']->attach($this->membreManager);
                                     $_SESSION['compte'] = $compte;
                                     //$_SESSION['compte']->attach($this->compteManager);
                                     if(!$_SESSION['compte']->isActif()) Donnees::ajouterValeur('inscriptionInvalide','etat');
-                                    /*header("Location: ?page=membre");
-                                    exit();*/
+                                    else{
+                                        header("Location: ?page=membre");
+                                        exit();
+                                    }
                                 } 
                             }
                             else{
@@ -77,33 +83,34 @@ class ControleurMembre extends Controleur{
                     }
                 }
                 if(isset($_POST['inscription'])){
-                        if($this->verifierMembreExiste() === 0){
-                            $newMembre = new Membre();
-                            $newMembre->setNom($_POST['inscription']['nom']);
-                            $newMembre->setPrenom($_POST['inscription']['prenom']);
-                            $newMembre->setDateNaissance($_POST['inscription']['dateNaissance']);
-                            $now = new DateTime('NOW');
-                            $newMembre->setDateInscription($now->format('Y-m-d'));
-                            $newMembre->setEmail($_POST['inscription']['email']);
-                            $newMembre->setIdentifiant($_POST['inscription']['identifiant']);
-                            $newMembre->setPassword(Crypteur::getCrypteur()->code($_POST['inscription']['password']));
-                            
-                            $idNewMembre = $this->membreManager->add($newMembre);
-                            if($idNewMembre || $idNewMembre != 0){
-                                $newMembre->setId($idNewMembre);
-                                $compteMembre = new Compte();
-                                $compteMembre->setIdUsager($idNewMembre);
-                                $idCompte = $this->compteManager->add($compteMembre);
-                                if($idCompte || $idCompte != 0){
-                                    if($this->envoieMailInscription($newMembre)) Donnees::ajouterValeur('validerInscription','etat');
-                                    else Donnees::ajouterValeur('erreurEnvoieMail','etat');
-                                    
-                                }
+                    if($this->verifierMembreExiste() === 0){
+                        $newMembre = new Membre();
+                        $newMembre->setNom($_POST['inscription']['nom']);
+                        $newMembre->setPrenom($_POST['inscription']['prenom']);
+                        $newMembre->setDateNaissance($_POST['inscription']['dateNaissance']);
+                        $now = new DateTime('NOW');
+                        $newMembre->setDateInscription($now->format('Y-m-d'));
+                        $newMembre->setEmail($_POST['inscription']['email']);
+                        $newMembre->setIdentifiant($_POST['inscription']['identifiant']);
+                        $newMembre->setPassword(Crypteur::getCrypteur()->code($_POST['inscription']['password']));
+
+                        $idNewMembre = $this->membreManager->add($newMembre);
+                        if($idNewMembre || $idNewMembre != 0){
+                            $newMembre->setId($idNewMembre);
+                            $compteMembre = new Compte();
+                            $compteMembre->setIdMembre($idNewMembre);
+                            $idCompte = $this->compteManager->add($compteMembre);
+                            if($idCompte || $idCompte != 0){
+                                if($this->envoieMailInscription($newMembre)) Donnees::ajouterValeur('validerInscription','etat');
+                                else Donnees::ajouterValeur('erreurEnvoieMail','etat');
+
                             }
                         }
+                    }
+                    unset($_POST['inscription']);    
                 }
                 if(isset($_REQUEST['auth'])){
-                    $compteMembre = $this->compteManager->get('idUsager', Crypteur::getCrypteur()->decode($_REQUEST['auth']));
+                    $compteMembre = $this->compteManager->get('idMembre', Crypteur::getCrypteur()->decode($_REQUEST['auth']));
                     if($compteMembre) {
                         // On attache le compteManager comme Observeur du compteMembre
                         $compteMembre->attach($this->compteManager);
@@ -177,7 +184,7 @@ class ControleurMembre extends Controleur{
     
     protected function envoieMailInscription(Membre $membre){
         try{
-            $mail = new PHPMailer();
+            $mail = new PHPMailer(true);
             // on recupère l'url racine du site dans les configs
             $urls = Config::getConfig('url');
             // on génère le lien de validation à partir de l'url
@@ -186,6 +193,9 @@ class ControleurMembre extends Controleur{
             $message = file_get_contents(dirname(__FILE__).'/../../Ressources/Templates/Mails/mailConfirmIns.html');
             //on intègre les informations du membre dans le mail y compris le lien de validation
             $message = sprintf($message,$membre->getPrenom(),$membre->getNom(),$urls['local'],$lienConfirm);
+            
+            $message =  eregi_replace('[\]', '', $message);
+            //$message = preg_replace('/\\\\/', '', $message);
             
             $mail->SetFrom('admin@protubes.com', 'Administrateur');
             $mail->AddAddress($membre->getEmail(), $membre->getPrenom().' '.$membre->getNom());

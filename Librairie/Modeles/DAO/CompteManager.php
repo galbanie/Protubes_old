@@ -21,7 +21,7 @@ class CompteManager extends DAO{
              $sql = "INSERT INTO compte SET
                      actif = :actif, newsletter = :news,langueDefault = :lang,
                      confidentialiteDefault = :conf, permettreRechercheMembre = :permRech,
-                     idUsager = :idU";
+                     idMembre = :idM";
             /* @var $requete PDOStatement */
             $requete = $this->bd->prepare($sql);
             $requete->bindValue(':actif',$objet->isActif(),PDO::PARAM_BOOL);
@@ -29,7 +29,7 @@ class CompteManager extends DAO{
             $requete->bindValue(':lang',$objet->getLangueDefault());
             $requete->bindValue(':conf',$objet->getConfidentialiteDefault());
             $requete->bindValue(':permRech',$objet->isPermettreRechercheMembre());
-            $requete->bindValue(':idU',$objet->getIdUsager());
+            $requete->bindValue(':idM',$objet->getIdMembre());
 
             $requete->execute();
             return $this->bd->lastInsertId();
@@ -152,7 +152,7 @@ class CompteManager extends DAO{
              $sql = "UPDATE compte SET
                      actif = :actif, newsletter = :news,langueDefault = :lang,
                      confidentialiteDefault = :conf, permettreRechercheMembre = :permRech,
-                     idUsager = : WHERE id = :id";
+                     idMembre = :idM WHERE id = :id";
             /* @var $requete PDOStatement */
             $requete = $this->bd->prepare($sql);
             $requete->bindValue(':actif',$objet->isActif(),PDO::PARAM_BOOL);
@@ -160,7 +160,7 @@ class CompteManager extends DAO{
             $requete->bindValue(':lang',$objet->getLangueDefault());
             $requete->bindValue(':conf',$objet->getConfidentialiteDefault());
             $requete->bindValue(':permRech',$objet->isPermettreRechercheMembre());
-            $requete->bindValue(':idU',$objet->getIdUsager());
+            $requete->bindValue(':idM',$objet->getIdMembre());
 
             $requete->execute();
             return $this->bd->lastInsertId();

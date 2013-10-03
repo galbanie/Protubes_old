@@ -14,16 +14,16 @@ class Compte extends Modele{
     private $langueDefault;
     private $confidentialiteDefault;
     private $permettreRechercheMembre;
-    private $idUsager;
+    private $idMembre;
     
-    public function __construct($id = null, $actif = false,$newsletter = true,$langueDefault = "fr",$confidentialiteDefault = self::CONFIDENTIALITE_PUBLIC,$permettreRechercheMembre = true, $idUsager = null) {
+    public function __construct($id = null, $actif = false,$newsletter = true,$langueDefault = "fr",$confidentialiteDefault = self::CONFIDENTIALITE_PUBLIC,$permettreRechercheMembre = true, $idMembre = null) {
         $this->setId($id);
         $this->setActif($actif);
         $this->setNewsletter($newsletter);
         $this->setLangueDefault($langueDefault);
         $this->setConfidentialiteDefault($confidentialiteDefault);
         $this->setPermettreRechercheMembre($permettreRechercheMembre);
-        $this->setIdUsager($idUsager);
+        $this->setIdMembre($idMembre);
     }
     
     public function isActif() {
@@ -73,11 +73,11 @@ class Compte extends Modele{
         if($notify) $this->notifyObservers ();
     }
 
-    public function getIdUsager() {
+    public function getIdMembre() {
         return $this->idUsager;
     }
 
-    public function setIdUsager($idUsager,$notify = false) {
+    public function setIdMembre($idUsager,$notify = false) {
         $this->idUsager = $idUsager;
         if($notify) $this->notifyObservers ();
     }

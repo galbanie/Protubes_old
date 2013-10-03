@@ -11,10 +11,10 @@ class MembreManager extends DAO {
         $this->setBd($bd);
     }
 
-    /* @var $objet Usager*/
+    /* @var $objet Membre*/
     public function add($objet) {
         try {
-             $sql = "INSERT INTO usager SET
+             $sql = "INSERT INTO membre SET
                      nom = :nom, prenom = :prenom,idImage = :im, identifiant = :identifiant,
                      email = :email, password = :password, dateNaissance = :dn,
                      dateInscription = :di, pays = :pays, codePostal = :cp,
@@ -36,37 +36,37 @@ class MembreManager extends DAO {
             $requete->execute();
             return $this->bd->lastInsertId();
         } catch (Exception $e) {
-            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"UsagerManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
             return false;
         }
     }
 
     public function countRows() {
         try {
-            $requete = $this->bd->query("SELECT COUNT(*) AS nb_total FROM usager");
+            $requete = $this->bd->query("SELECT COUNT(*) AS nb_total FROM membre");
             $resultat = $requete->fetch(PDO::FETCH_ASSOC);
             $rows = (int)$resultat['nb_total'];
             return $rows;
         } catch (Exception $e) {
-            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"UsagerManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
             return false;
         }
     }
 
     public function delete($colonne, $value) {
         try {
-            $requete = $this->bd->prepare("DELETE FROM usager WHERE ".$colonne." = :colonne");
+            $requete = $this->bd->prepare("DELETE FROM membre WHERE ".$colonne." = :colonne");
             $requete->execute(array(':colonne' => $value ));
             return true;
         } catch (Exception $e) {
-            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"UsagerManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
             return false;
         }
     }
 
     public function get($colonne, $value) {
         try {
-            $requete = $this->bd->prepare("SELECT * FROM usager WHERE ".$colonne." = :colonne");
+            $requete = $this->bd->prepare("SELECT * FROM membre WHERE ".$colonne." = :colonne");
             $requete->execute(array(':colonne' => $value));			
             $resultat = $requete->fetch(PDO::FETCH_ASSOC);
 
@@ -79,7 +79,7 @@ class MembreManager extends DAO {
             //$requete>closeCursor();
             return null;
         } catch (Exception $e) {
-            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"UsagerManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
             return false;
         }
     }
@@ -87,7 +87,7 @@ class MembreManager extends DAO {
     public function getList($colonne, $value) {
         try {
             $liste = new Liste();
-            $requete = $this->bd->prepare("SELECT * FROM usager WHERE ".$colonne." = :colonne");
+            $requete = $this->bd->prepare("SELECT * FROM membre WHERE ".$colonne." = :colonne");
             $requete->execute( array( ':colonne' => $value ) );			
             while ($donnee = $requete->fetch(PDO::FETCH_ASSOC)){
                 $membre = new Membre();
@@ -96,7 +96,7 @@ class MembreManager extends DAO {
             }
             return $liste;
         } catch (Exception $e) {
-            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"UsagerManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
             return false;
         }
     }
@@ -104,7 +104,7 @@ class MembreManager extends DAO {
     public function getListAll() {
         try {
             $liste = new Liste();
-            $requete = $this->bd->query("SELECT * FROM usager");
+            $requete = $this->bd->query("SELECT * FROM membre");
             while ($donnee = $requete->fetch(PDO::FETCH_ASSOC)){
                 $membre = new Membre();
                 $membre->setTableauDonnees($donnee);
@@ -112,7 +112,7 @@ class MembreManager extends DAO {
             }
             return $liste;
         } catch (Exception $e) {
-            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"UsagerManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
             return false;
         }
     }
@@ -120,7 +120,7 @@ class MembreManager extends DAO {
     public function getListAllLimit($limitStart, $pagination) {
         try {
             $liste = new Liste();
-            $requete = $this->bd->query("SELECT * FROM usager LIMIT ".$limitStart.",".$pagination);
+            $requete = $this->bd->query("SELECT * FROM membre LIMIT ".$limitStart.",".$pagination);
             while ($donnee = $requete->fetch(PDO::FETCH_ASSOC)){
                 $membre = new Membre();
                 $membre->setTableauDonnees($donnee);
@@ -128,7 +128,7 @@ class MembreManager extends DAO {
             }
             return $liste;
         } catch (Exception $e) {
-            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"UsagerManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
             return false;
         }
     }
@@ -136,7 +136,7 @@ class MembreManager extends DAO {
     public function getListLimit($colonne, $value, $limitStart, $pagination) {
         try {
             $liste = new Liste();
-            $requete = $this->bd->query("SELECT * FROM usager WHERE $colonne = $value LIMIT ".$limitStart.",".$pagination);
+            $requete = $this->bd->query("SELECT * FROM membre WHERE $colonne = $value LIMIT ".$limitStart.",".$pagination);
             while ($donnee = $requete->fetch(PDO::FETCH_ASSOC)){
                 $membre = new Membre();
                 $membre->setTableauDonnees($donnee);
@@ -144,14 +144,14 @@ class MembreManager extends DAO {
             }
             return $liste;
         } catch (Exception $e) {
-            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"UsagerManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
             return false;
         }
     }
 
     public function update(Observable $subject, $arg = null) {
         try {
-            $sql = "UPDATE usager SET 
+            $sql = "UPDATE membre SET 
                      nom = :nom, prenom = :prenom,idImage = :im, identifiant = :identifiant,
                      email = :email, password = :password, dateNaissance = :dn,
                      dateInscription = :di, pays = :pays, codePostal = :cp,
@@ -174,7 +174,7 @@ class MembreManager extends DAO {
             $requete->execute();
             return true;
         } catch (Exception $e) {
-            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"UsagerManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
             return false;
         }
     }
