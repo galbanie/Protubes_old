@@ -54,7 +54,10 @@
         </div>
     </div>
     <div id="stateMembreProfile">
-        
+        <div class="boxInfoDiv" >
+            <span class="spanHaut">Inscris depuis</span>
+            <span class="spanBas" ><?=$_SESSION['membre']->getDateInscription();?></span>   
+        </div>
     </div>
     <hr class="clearfloatBoth" />
     <div id="confirEditMembreProfile">
@@ -99,7 +102,7 @@
         }
     }
     
-    addEvent(myForm,'submit',function(){
+    /*addEvent(myForm,'submit',function(){
         var result = true;
         for (var i in check) {
             result = check[i](i) && result;
@@ -108,7 +111,7 @@
             return true;
         }
         return false;
-    });
+    });*/
     
     // Evenement image
     addEvent(image,'mouseover',function(){
