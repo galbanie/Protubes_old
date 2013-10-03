@@ -3,6 +3,7 @@
     
     new Autoloader();
     /* From : Marc
+     * ceci est un test
      * Message : Il est important de garder cette include 
      *          sous l'instanciation de Autoloader car
      *          le fichier Session.php utilise la classe
