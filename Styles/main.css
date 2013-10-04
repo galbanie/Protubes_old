@@ -384,12 +384,35 @@
     border-color: #E4E4E4;
 }
 
+/* Membre > Info Bar */
+
 #panelMembreInfoBar{
-    width: 99.1%;
-    padding: 10px 5px !important;
+    width: 100%;
+    /*padding: 10px 5px !important;*/
     border-width: 0 0 1px 0;
     border-style: solid;
     border-color: #E4E4E4;
+}
+
+#panelMembreInfoBar>div{
+    float: left;
+    width: 160px;
+    padding: 10px 5px !important;
+    margin-left: 20px;
+    background-size: 15%;
+    background-position: 7% 43%;
+    background-repeat: no-repeat;
+    /*border-width: 0 1px 0 1px;
+    border-style: solid;
+    border-color: #E4E4E4;*/
+}
+
+#panelMembreInfoBar>div>span{
+    margin-left: 40px;
+}
+
+#membreInfoBarVideo{
+    background-image: url('images/Icones/icons-general2.png');
 }
 
 #panelMembreContent{

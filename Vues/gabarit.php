@@ -14,7 +14,7 @@
             <!-- Logo-->
             <div id="logo">
                 <a href="index.php">
-                    <img alt="Protubes." src="Ressources/Images/Logo/Protubes-160x40_new.png" />
+                    <img alt="Protubes." src="Ressources/Images/Logo/Logo-Protubes.png" />
                 </a>
             </div>
             
