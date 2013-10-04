@@ -1,6 +1,6 @@
-<div>
-    Video plus appreciées
+<div id="membreGeneralstatistique" style="display: none;" >
+    
 </div>
-<div>
-    Video plus appreciées
+<div id="membreGeneralTimeline">
+    le timeline
 </div>

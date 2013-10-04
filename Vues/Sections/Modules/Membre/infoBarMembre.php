@@ -21,7 +21,7 @@
     </div>
     
     <!--div-->
-        <input id="btnStat" class="button" type="button" value="Statistiques" />
+    <input id="btnStat" class="button" type="button" value="Statistiques" onclick="showHideElementBlock('membreGeneralstatistique');" />
     <!--/div-->
     
     <hr class="clearfloatBoth" />
