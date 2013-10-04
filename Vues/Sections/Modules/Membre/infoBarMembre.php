@@ -1,22 +1,28 @@
-<?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
 <div id="panelMembreInfoBar">
+    
     <div id="membreInfoBarVideo">
-        <span>21458 vidéos</span>
+        <span class="InfoBarChiffre">212458</span>
+        <span class="InfoBarLettre">vidéos</span>
     </div>
     
     <div id="membreInfoBarfollower">
-        <span>21458 vues</span>
+        <span class="InfoBarChiffre">21</span>
+        <span class="InfoBarLettre">Suiveurs</span>
+    </div>
+    
+    <div id="membreInfoBarfollowing">
+        <span class="InfoBarChiffre">20</span>
+        <span class="InfoBarLettre">Suivis</span>
     </div>
     
     <div id="membreInfoBarVue">
-        <span>21458 vues</span>
+        <span class="InfoBarChiffre">214508</span>
+        <span class="InfoBarLettre">vues</span>
     </div>
+    
+    <!--div-->
+        <input id="btnStat" class="button" type="button" value="Statistiques" />
+    <!--/div-->
     
     <hr class="clearfloatBoth" />
 </div>

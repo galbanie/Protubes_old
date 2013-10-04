@@ -51,7 +51,7 @@ header form, header form *{
 #btnSearchBarreRecherche{
     height: 34px !important;
     margin-left: -7px !important;
-    background-image: url('images/Icones/icon_search.png');
+    background-image: url('images/Icones/black/icon_search.png');
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -152,14 +152,14 @@ header form, header form *{
 }
 
 #menuDeroulant{
-    background-image: url('images/Icones/icons_r2_c2.png');
+    background-image: url('images/Icones/black/icons_r2_c2.png');
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #menuDeroulant:checked,
 #menuDeroulant:active{
-    background: url('images/Icones/icons-puceVersBas.png') no-repeat center;
+    background: url('images/Icones/black/icons-puceVersBas.png') no-repeat center;
 }
 
 #menuDeroulant a{
@@ -185,21 +185,21 @@ header form, header form *{
 
 #aDeconnexion{
     border-width: 0 1px 1px 1px !important;
-    background-image: url('images/Icones/icons-eteindre.png');
+    background-image: url('images/Icones/black/icons-eteindre.png');
 }
 
 #aSettings{
-    background-image: url('images/Icones/icons-modifeSettings.png');   
+    background-image: url('images/Icones/black/icons-modifeSettings.png');   
 }
 
 #aGestionnaire{
-    background-image: url('images/Icones/icons-film.png');   
+    background-image: url('images/Icones/black/icons-film.png');   
 }
 
 #aAlerte{
-    background-image: url('images/Icones/icons-alert.png');
+    background-image: url('images/Icones/black/icons-alert.png');
 }
 
 #aProfil{
-    background-image: url('images/Icones/icons-profile.png');
+    background-image: url('images/Icones/black/icons-profile.png');
 }

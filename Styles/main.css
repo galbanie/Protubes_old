@@ -209,7 +209,7 @@
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
-    background: url('images/Icones/icons-attention.png') no-repeat #CCC;
+    background: url('images/Icones/black/icons-attention.png') no-repeat #CCC;
     background-position: 10px 50%;
 }
 
@@ -353,27 +353,27 @@
 }
 
 #lienDeconnexionMembre{
-    background-image: url('images/Icones/icons-eteindre.png');
+    background-image: url('images/Icones/black/icons-eteindre.png');
 }
 
 #lienSettingsMembre{
-    background-image: url('images/Icones/icons-modifeSettings.png');   
+    background-image: url('images/Icones/black/icons-modifeSettings.png');   
 }
 
 #lienGestionnaireMembre{
-    background-image: url('images/Icones/icons-film.png');   
+    background-image: url('images/Icones/black/icons-film.png');   
 }
 
 #lienAlerteMembre{
-    background-image: url('images/Icones/icons-alert.png');
+    background-image: url('images/Icones/black/icons-alert.png');
 }
 
 #lienProfilMembre{
-    background-image: url('images/Icones/icons-profile.png');
+    background-image: url('images/Icones/black/icons-profile.png');
 }
 
 #lienGeneralMembre{
-    background-image: url('images/Icones/icons-general.png');
+    background-image: url('images/Icones/black/icons-general.png');
 }
 
 #panelMembreMain{
@@ -391,28 +391,48 @@
     /*padding: 10px 5px !important;*/
     border-width: 0 0 1px 0;
     border-style: solid;
-    border-color: #E4E4E4;
+    border-color: #FFFFFF;
+    background-color: #004ab3;
 }
 
 #panelMembreInfoBar>div{
     float: left;
-    width: 160px;
-    padding: 10px 5px !important;
+    /*width: 160px;*/
+    width: 18%;
+    padding: 9px 5px !important;
     margin-left: 20px;
-    background-size: 15%;
+    /*background-size: 15%;
     background-position: 7% 43%;
-    background-repeat: no-repeat;
-    /*border-width: 0 1px 0 1px;
-    border-style: solid;
-    border-color: #E4E4E4;*/
+    background-repeat: no-repeat;*/
 }
 
 #panelMembreInfoBar>div>span{
-    margin-left: 40px;
+    color:#FFFFFF;
+    font-weight: bolder;
+}
+
+.InfoBarChiffre{
+    /*margin-left: 40px;*/
+    padding: 4px 4px;
+    background-color: #fd2626;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+}
+
+.InfoBarLettre{
+    font-size: smaller;
+}
+
+#btnStat{
+    float: right;
+    margin: 5px 5px 3px 0 !important;
+    color:#FFFFFF;
+    background-color: #fd2626;
 }
 
 #membreInfoBarVideo{
-    background-image: url('images/Icones/icons-general2.png');
+    /*background-image: url('images/Icones/icons-general2.png');*/
 }
 
 #panelMembreContent{
@@ -546,6 +566,7 @@
 #confirEditMembreProfile{
     float: none !important;
     width: 420px;
+    /*width: 60%;*/
     display: block !important;
     margin: 5px auto 10px auto;
 }
@@ -604,7 +625,8 @@
 
 #confirmEditMembreReglage{
     float: none !important;
-    width: 600px;
+    /*width: 600px;*/
+    width: 70%;
     display: block !important;
     margin: 5px auto 10px auto;
 }
