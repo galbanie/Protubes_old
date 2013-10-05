@@ -635,10 +635,56 @@
 
 #membreGeneralstatistique{
     height: 300px;
+    margin-bottom: 5px;
     border-width: 0 0 1px 1px;
     border-style: solid;
     border-color: #E4E4E4;
     /*background-color: #E4E4E4;*/
+}
+
+/* Section Membre > General > Timeline */
+
+#membreGeneralTimeline{
+    
+}
+
+#timeline{
+    width: 800px;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+#timeline li{
+    width: 375px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid #000000;
+    padding: 5px;
+    background-color: #E4E4E4;
+}
+
+#timeline li:nth-of-type(odd){
+    clear: both;
+    float: right;
+}
+
+#timeline li:nth-of-type(odd), #timeline li:nth-of-type(even){
+    margin: -10px 0 20px 0;
+}
+
+.enteteTimeline{
+    border: 1px solid #000000;
+    background-color: #004ab3;
+}
+
+/* Section Membre > General > Container Membre Add Video */
+
+.containerMembreAddVideo{
+    height: 140px;
+    border: 1px solid black;
 }
 
 /*|||||||||||| section etat   |||||||||||||*/
