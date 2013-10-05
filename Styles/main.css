@@ -680,11 +680,79 @@
     background-color: #004ab3;
 }
 
-/* Section Membre > General > Container Membre Add Video */
+.contentTimeline{
+    margin-top: 5px;
+}
 
-.containerMembreAddVideo{
-    height: 140px;
-    border: 1px solid black;
+.time{
+    float: right;
+    color: #E4E4E4;
+    margin-right: 5px;
+}
+
+/* Section Membre > General > Container Timeline Video */
+
+.containerTimelineVideo{
+    display: block;
+    text-decoration: none;
+}
+
+.containerTimelineVideo>div{
+    float: left;
+    width: 285px;
+    padding: 5px;
+    margin-left: 5px;
+    border: 1px solid #000000;
+    text-decoration: none;
+}
+
+.containerTimelineVideo>div>span{
+    color : #000000;
+    margin-left: 5px;
+    font-size: x-small;
+}
+
+.containerTimelineVideo>div>p{
+    font-size: smaller;
+}
+
+.containerTimelineVideo>img{
+    float: left;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #FFFFFF;
+}
+
+.clearFloatLeft{
+    clear : left;
+    visibility: hidden;
+}
+
+/* Section Membre > Gestionnaire > Categorie */
+
+.membreGestionCate{
+    padding: 5px;
+    margin-bottom: 5px;
+    border : 1px solid #000000;
+    background-color: #E4E4E4;
+}
+
+.membreGestionCateTitre{
+    padding: 5px;
+    background-color: #004ab3;
+    cursor: pointer;
+}
+
+.membreGestionCateTitre h3{
+    color: #FFFFFF;
+    font-weight: bolder;
+}
+
+.membreGestionCateContent{
+    height: 700px;
+    margin-top: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
 }
 
 /*|||||||||||| section etat   |||||||||||||*/
