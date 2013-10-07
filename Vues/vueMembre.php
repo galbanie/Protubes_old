@@ -2,7 +2,7 @@
 require(dirname(__FILE__).'/../Languages/lang_'.$_SESSION['lang'].'_inc.php'); 
 ?>
 
-<?php $titrePage = $langTitre['membre'].(isset($_SESSION['membre'])?"":$langForm[$formulaire]); ?>
+<?php $titrePage = $langTitre['membre'].(isset($_SESSION['membre'])?$_SESSION['membre']->getIdentifiant():$langForm[$formulaire]); ?>
 
 <?php ob_start();?>
     <? require(dirname(__FILE__).'/'.$includeBtnUser); ?>

@@ -23,7 +23,12 @@ class ControleurMembre extends Controleur{
                 if(isset($_GET['action'])){
                     switch ($_GET['action']) {
                         case "profile":
-                            Donnees::ajouterValeur('membreProfile.php','panelMembreContent');
+                            if(isset($_REQUEST['modif']) && $_REQUEST['modif'] == 'profile'){
+                                Donnees::ajouterValeur('membreModifProfile.php','panelMembreContent');
+                            }
+                            else{
+                                Donnees::ajouterValeur('membreProfile.php','panelMembreContent');
+                            }
                         break;
                         case "alerte":
                             Donnees::ajouterValeur('membreAlerte.php','panelMembreContent');
@@ -33,9 +38,6 @@ class ControleurMembre extends Controleur{
                         break;
                         case "settings":
                             Donnees::ajouterValeur('membreReglage.php','panelMembreContent');
-                        break;
-                        case "changeImage":
-                            Donnees::ajouterValeur('changeImage.php','panelMembreContent');
                         break;
                         case "deconnexion":
                             unset($_SESSION['membre']);

@@ -111,7 +111,7 @@ function startUploading() {
     oXHR.addEventListener('load', uploadFinish, false);
     oXHR.addEventListener('error', uploadError, false);
     oXHR.addEventListener('abort', uploadAbort, false);
-    oXHR.open('POST', 'Outils/upload.php');
+    oXHR.open('POST', 'upload.php');
     oXHR.send(vFD);
 
     // set inner timer

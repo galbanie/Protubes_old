@@ -9,10 +9,12 @@ $sFileName = $_FILES['file']['name'];
 $sFileType = $_FILES['file']['type'];
 $sFileSize = bytesToSize1024($_FILES['file']['size'], 1);
 
-echo <<<EOF
+/*echo <<<EOF
 <p>Your file: {$sFileName} has been successfully received.</p>
 <p>Type: {$sFileType}</p>
 <p>Size: {$sFileSize}</p>
-EOF;
+EOF;*/
+
+
 
 ?>

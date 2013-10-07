@@ -1,21 +1,3 @@
-
-// affiche et cache un element de type block
-function showHideElementBlock(id){
-    
-    var element = document.getElementById(id);
-    
-    if(element !== null){
-        var display = element.style.display;
-        
-        if(display === "block"){
-            element.style.display = "none";
-        }
-        else if (display === "none"){
-            element.style.display = "block";
-        }
-    }
-}
-
 // fonction générique de création d'un objet XMLHttpRequest
 function creationXHR(){
     var resultat = null;
@@ -42,4 +24,75 @@ function addEvent(element, event, func) {
     } else { // Si notre élément ne possède pas la méthode addEventListener()
         element.attachEvent('on' + event, func);
     } 
+}
+
+// affiche et cache un element de type block
+function showHideElementBlock(id){
+    
+    var element = document.getElementById(id);
+    
+    if(element !== null){
+        var display = element.style.display;
+        
+        if(display === "block"){
+            element.style.display = "none";
+        }
+        else if (display === "none"){
+            element.style.display = "block";
+        }
+    }
+}
+
+// verifie si l'element est dans le DOM et son tag
+function checkElementDOM(element, tag){
+    if(element.nodeType === 1){
+        if(element.tagName === tag){
+            return true;
+        }
+    }
+    return false;
+}
+
+// declenche la fenetre de chargement d'un fichier
+function declencheChargement(form){
+    if(checkElementDOM(form,'FORM')){
+        form.fichier.click();
+    }
+}
+
+// demarrage du chargement
+function demarrageChargement(form){
+    if(checkElementDOM(form,'FORM')){
+        var data = new FormData(form);
+        var objetXHR = creationXHR();
+        
+        addEvent(objetXHR,'progress',updateProgress);
+        addEvent(objetXHR,'load',transfertComplete);
+        addEvent(objetXHR,'error',transfertFailed);
+        addEvent(objetXHR,'abort',transfertCanceled);
+        
+        objetXHR.open('POST', form.action);
+        objetXHR.send(data);
+    }
+}
+
+function updateProgress(e){
+    if(e.lengthComputable){
+        
+    }
+    else{
+        
+    }
+}
+
+function transfertComplete(){
+    
+}
+
+function transfertFailed(){
+    
+}
+
+function transfertCanceled(){
+    
 }

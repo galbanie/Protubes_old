@@ -440,7 +440,7 @@
     padding-left: 20px;
 }
 
-#panelMembreContent form >div{
+#panelMembreContent form >div,#panelMembreContent > #divProfileMembre > div{
     float: left;
     display: inline-block;
 }
@@ -507,7 +507,7 @@
     height: 280px;
 }
 
-#imageMembreProfile a{
+#imageMembreProfile>a{
     position: absolute;
     display: none;
     color : #FFFFFF;
@@ -519,8 +519,113 @@
     border: 1px solid #E4E4E4;
 }
 
-#imageMembreProfile a:hover{
+#imageMembreProfile>a:hover{
     background-color:#fd2626;
+}
+
+#divCHoixActionChangeImage{
+    position: absolute;
+    /*width: 211px;*/
+    top:266px;
+    left:324px;
+    background-color: #E4E4E4;
+    border: 1px solid #000000;
+    z-index: 700;
+}
+
+#divCHoixActionChangeImage a{
+    display: block;
+    padding:2.5px 18px;
+    color : #FFFFFF;
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: x-small;
+    background-color: #004ab3;
+    border: 1px solid #E4E4E4;
+    cursor: pointer;
+}
+
+#divCHoixActionChangeImage a:hover{
+    background-color:#fd2626;
+}
+
+#informationProfileMembre{
+    width: 65%;
+    height: 266px;
+    padding: 10px;
+    margin-left: 20px;
+    border: 1px solid #A8A8A8;
+}
+
+#informationProfileMembre >div{
+    height: 40%;
+}
+
+#informationProfileMembre >div>div{
+    float: left;
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 25%;
+}
+
+#informationProfileMembre >div>div+div{
+    float: right;
+     margin-left: 0 !important;
+     margin-right: 25%;
+}
+
+#informationProfileMembre div #infoNomPrenom{
+    float: left;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+#informationProfileMembre div #infoAge{
+    float:right;
+    font-size: large;
+    font-weight: bolder;
+}
+
+#informationProfileMembre div #infoId{
+    margin-left: 10px;
+    padding:3px;
+    color: #FFFFFF;
+    background-color: #555;
+}
+
+#informationProfileMembre div #infoVille{
+    display: block;
+    margin-left: 10px;
+}
+
+#membreProfileBtnModif{
+    width: 99%;
+    margin-top: 20px;
+    color: #FFFFFF;
+    background-color: #004ab3;
+}
+
+#divProfileMembreAbonner{
+    display: block !important;
+    width: 95%;
+    margin: 10px 20px;
+}
+
+#divProfileMembreAbonner div{
+    display: inline-block;
+}
+
+#profileMembreAbonnement{
+    width: 48.5%;
+    height: 70px;
+    border: 1px solid #CCC;
+}
+
+#profileMembreAbonner{
+    width: 48.5%;
+    height: 70px;
+    margin-left: 10px;
+    border: 1px solid #CCC;
 }
 
 #information1{
@@ -714,6 +819,7 @@
 
 .containerTimelineVideo>div>p{
     font-size: smaller;
+    text-align: justify;
 }
 
 .containerTimelineVideo>img{

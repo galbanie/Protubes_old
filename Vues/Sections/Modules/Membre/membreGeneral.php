@@ -39,9 +39,9 @@
                     <img class="img-video-small" src="Ressources/Images/icone_video.png" />
                     <div>
                         <h6>Titre de la video</h6>
-                        <span>Religion > Islam</span>
-                        <p>Description courte de la video du membre.</p>
-                        <span>Durée 30:10</span>
+                        <span>Sport > Tennis</span>
+                        <p>Description courte de la video du membre. Le tennis, un beau sport.</p>
+                        <span>Durée 05:11</span>
                     </div>
                     <hr class="clearFloatLeft" />
                 </a>
