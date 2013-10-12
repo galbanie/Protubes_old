@@ -1,3 +1,8 @@
+// Variables globales
+var iMaxFilesize = 256000; // 250 Kb max taille image
+var vMaxFilesize = 104857600; // 100 Mb max taille video
+var timer = 0;
+
 // fonction générique de création d'un objet XMLHttpRequest
 function creationXHR(){
     var resultat = null;
@@ -60,39 +65,76 @@ function declencheChargement(form){
     }
 }
 
+function fichierSelected(input){
+    if(checkElementDOM(input,'INPUT') && input.type === 'file'){
+        var file = input.files[0];
+        var type;
+        
+        var rFilter = /^(image\/bmp|image\/gif|image\/jpeg|image\/png|image\/tiff)$/i;
+        if (rFilter.test(file.type)) {
+            type = 'image';
+        }
+        else{
+            rFilter = /^(video\/mpeg|video\/mp4|video\/quicktime|video\/x-ms-wmv|video\/x-msvideo|video\/x-flv)$/i;
+            if (rFilter.test(file.type)) {
+                type = 'video';
+            }
+            else return false;
+        }
+        
+        switch (type){
+            case 'image':
+                if (file.size > iMaxFilesize) {
+                    return false;
+                }
+            break;
+            case 'video':
+                if (file.size > vMaxFilesize) {
+                    return false;
+                }
+            break;
+        }
+        
+        return true;
+    }
+    return false;
+}
+
 // demarrage du chargement
 function demarrageChargement(form){
     if(checkElementDOM(form,'FORM')){
         var data = new FormData(form);
         var objetXHR = creationXHR();
         
-        addEvent(objetXHR,'progress',updateProgress);
-        addEvent(objetXHR,'load',transfertComplete);
-        addEvent(objetXHR,'error',transfertFailed);
-        addEvent(objetXHR,'abort',transfertCanceled);
+        addEvent(objetXHR.upload,'progress',updateProgressImage);
+        addEvent(objetXHR,'load',transfertCompleteImage);
+        addEvent(objetXHR,'error',transfertFailedImage);
+        addEvent(objetXHR,'abort',transfertCanceledImage);
+        
+        //alert(form.action);
         
         objetXHR.open('POST', form.action);
         objetXHR.send(data);
-    }
-}
-
-function updateProgress(e){
-    if(e.lengthComputable){
         
+        // set inner timer
+        //timer = setInterval(doInnerUpdates, 300);
     }
-    else{
-        
-    }
 }
 
-function transfertComplete(){
+function updateProgressImage(){
+    document.imageProfil.src = 'Styles/images/big-loader.gif';
+}
+
+function transfertCompleteImage(e){
+    alert(e.target.responseText);
+    document.imageProfil.src = "Ressources/Images/Profil_default.jpg";
     
 }
 
-function transfertFailed(){
-    
+function transfertFailedImage(){
+    alert('fail');
 }
 
-function transfertCanceled(){
-    
+function transfertCanceledImage(){
+    alert('cancel');
 }

@@ -7,11 +7,8 @@
  */
 class ImageManager extends DAO {
     
-    private $log;
-    
     function __construct(PDO $bd) {
         $this->setBd($bd);
-        $this->log = new TraceErreur("LogDaoImage.txt");
     }
 
     /* @var $objet Image*/
@@ -31,7 +28,7 @@ class ImageManager extends DAO {
             $requete->execute();
             return $this->bd->lastInsertId();
         } catch (Exception $e) {
-            $this->log->ecrireLog($e->getTraceAsString(),"ImageManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"ImageManager", true);
             return false;
         }
     }
@@ -43,7 +40,7 @@ class ImageManager extends DAO {
             $rows = (int)$resultat['nb_total'];
             return $rows;
         } catch (Exception $e) {
-            $this->log->ecrireLog($e->getTraceAsString(),"ImageManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"ImageManager", true);
             return false;
         }
     }
@@ -54,7 +51,7 @@ class ImageManager extends DAO {
             $requete->execute(array(':colonne' => $value ));
             return true;
         } catch (Exception $e) {
-            $this->log->ecrireLog($e->getTraceAsString(),"ImageManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"ImageManager", true);
             return false;
         }
     }
@@ -74,7 +71,7 @@ class ImageManager extends DAO {
             //$requete>closeCursor();
             return null;
         } catch (Exception $e) {
-            $this->log->ecrireLog($e->getTraceAsString(),"ImageManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"ImageManager", true);
             return false;
         }
     }
@@ -91,7 +88,7 @@ class ImageManager extends DAO {
             }
             return $liste;
         } catch (Exception $e) {
-            $this->log->ecrireLog($e->getTraceAsString(),"ImageManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"ImageManager", true);
             return false;
         }
     }
@@ -107,7 +104,7 @@ class ImageManager extends DAO {
             }
             return $liste;
         } catch (Exception $e) {
-            $this->log->ecrireLog($e->getTraceAsString(),"ImageManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"ImageManager", true);
             return false;
         }
     }
@@ -123,7 +120,7 @@ class ImageManager extends DAO {
             }
             return $liste;
         } catch (Exception $e) {
-            $this->log->ecrireLog($e->getTraceAsString(),"ImageManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"ImageManager", true);
             return false;
         }
     }
@@ -139,7 +136,7 @@ class ImageManager extends DAO {
             }
             return $liste;
         } catch (Exception $e) {
-            $this->log->ecrireLog($e->getTraceAsString(),"ImageManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"ImageManager", true);
             return false;
         }
     }
@@ -156,15 +153,35 @@ class ImageManager extends DAO {
             $requete->bindValue(':taille',$subject->getTaille());
             $requete->bindValue(':type',$subject->getType());
             $requete->bindValue(':desc',$subject->getDesc());
-            $requete->bindValue(':blob',$subject->getBlob());
+            $requete->bindValue(':blob',  addslashes($subject->getBlob()));
 
             $requete->execute();
             return true;
         } catch (Exception $e) {
-            $this->log->ecrireLog($e->getTraceAsString(),"ImageManager", true);
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"ImageManager", true);
             return false;
         }
     }
+    
+    public function addImageMembre($idMembre,$idImage,$date){
+        try{
+            $sql = "INSERT INTO imageMembre SET
+                     idMembre = :idM, idImage = :idI,date = :date";
+            /* @var $requete PDOStatement */
+            $requete = $this->bd->prepare($sql);
+            $requete->bindValue(':idM',$idMembre);
+            $requete->bindValue(':idI',$idImage);
+            $requete->bindValue(':date',$date);
+            
+            $requete->execute();
+            return true;
+        }
+        catch (Exception $e){
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"ImageManager", true);
+            return false;
+        }
+    }
+    
 }
 
 ?>

@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="Styles/main.css" media="all"/>
         <link rel="stylesheet" type="text/css" href="Styles/footer.css" media="all"/>
         <script type="text/javascript" src="Scripts/protubes.js"></script>
-        <script type="text/javascript" src="Scripts/upload.js"></script>
+        <!--script type="text/javascript" src="Scripts/upload.js"></script-->
         <title><?= $titrePage ?></title>
     </head>
     <body>

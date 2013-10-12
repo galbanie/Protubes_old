@@ -6,6 +6,12 @@
  * @author galbanie
  */
 class Image extends Modele{
+    
+    public static $typesImage = array(
+        'image/gif',    'image/jpeg',   'image/png',
+        'image/psd',    'image/bmp',    'image/tiff'
+    );
+
     private $nom;
     private $taille;
     private $type;
@@ -62,7 +68,7 @@ class Image extends Modele{
     }
 
     public function setBlob($blob,$notify = false) {
-        $this->blob = $blob;
+        $this->blob = addslashes($blob);
         if($notify) $this->notifyObservers ();
     }
 
@@ -71,6 +77,10 @@ class Image extends Modele{
             header("Content-type :$this->type");
             echo $this->blob;
         }
+    }
+    
+    public static function isImageType($type){
+        return in_array($type, self::$typesImage);
     }
     
 }

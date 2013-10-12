@@ -398,7 +398,7 @@
 #panelMembreInfoBar>div{
     float: left;
     /*width: 160px;*/
-    width: 18%;
+    width: 16%;
     padding: 9px 5px !important;
     margin-left: 20px;
     /*background-size: 15%;
@@ -426,7 +426,7 @@
 
 #btnStat{
     float: right;
-    margin: 5px 5px 3px 0 !important;
+    margin: 4px 5px 0 0 !important;
     color:#FFFFFF;
     background-color: #fd2626;
 }
