@@ -7,7 +7,7 @@
 </div>
 <div class="membreGestionCate">
     <div class="membreGestionCateTitre" onclick="showHideElementBlock('mesVideos');">
-        <h3>Mes Videos</h3>
+        <h3><?=$langTexte['membreGestionMesVideos'] ?></h3>
     </div>
     <div id="mesVideos" class="membreGestionCateContent" style="display: none;"></div>
 </div>

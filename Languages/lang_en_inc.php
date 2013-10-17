@@ -49,7 +49,8 @@ $langTexte = array( "copydroit" => "All rights reserved",
                     "cliquezIci" => "Click here !",
                     "luAccepte" => "I have read and accept ",
                     "condiUti" => "the terms of use.",
-                    "repeter" => "Repeat");
+                    "repeter" => "Repeat",
+                    "membreGestionMesVideos" => "My Videos");
 
 $langMsg = array(   "msg01h2" => "Already a member !",
                     "msg01p1" => "Already have an account Protubes.",

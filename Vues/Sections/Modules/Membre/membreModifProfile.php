@@ -14,12 +14,12 @@
     </div>
     <div id="information1">
         <div>
-            <label class="labelInfo">Nom</label>
+            <label class="labelInfo"><?= $langForm['nom'];?></label>
             <input id="nom" class="inputInfo" type="text" value="<?=$_SESSION['membre']->getNom();?>" />
             <!--input class="buttonEdit" type="button" value="Modifier" /-->
         </div> 
         <div>
-            <label class="labelInfo">Prenom</label>
+            <label class="labelInfo"><?= $langForm['prenom'];?></label>
             <input id="prenom" class="inputInfo" type="text" value="<?=$_SESSION['membre']->getPrenom();?>" />
             <!--input class="buttonEdit" type="button" value="Modifier" /-->
         </div>
