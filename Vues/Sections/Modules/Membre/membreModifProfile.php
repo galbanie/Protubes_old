@@ -5,7 +5,7 @@
 </form>
 <form id="formProfileMembre" method="POST" action="">
     <div id="imageMembreProfile">
-        <img id="imageProfil" name="imageProfil" src="<? if($_SESSION['membre']->getIdImage() !== null) echo 'getImage.php?id='.$_SESSION['membre']->getIdImage();else echo 'Ressources/Images/Profil_default.jpg'?>" />
+        <img id="imageProfil" name="imageProfil" src="<?php if($_SESSION['membre']->getIdImage() !== null) echo 'getImage.php?id='.$_SESSION['membre']->getIdImage();else echo 'Ressources/Images/Profil_default.jpg'?>" />
         <a id="lienSurImage" href="#" onclick="showHideElementBlock('divCHoixActionChangeImage');">Changer l'image</a>
         <div id="divCHoixActionChangeImage" style="display: none;">
             <a href="#" onclick="showHideElementBlock('divCHoixActionChangeImage');declencheChargement(document.forms['form']);">Charger depuis votre ordinateur</a>

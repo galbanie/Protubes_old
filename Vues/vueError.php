@@ -5,7 +5,7 @@
 <?php //$titrePage = $langTitre['erreur']; ?>
 
 <?php ob_start(); ?>
-    <? //require(dirname(__FILE__).'/'.$includeBtnUser); ?>
+    <?php //require(dirname(__FILE__).'/'.$includeBtnUser); ?>
 <?php $btnMembre = ob_get_clean(); ?>
 
 <?php ob_start(); ?>

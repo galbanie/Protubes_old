@@ -40,9 +40,9 @@
         </header>
         <div id="global">
             <div id="principal">
-               <? if(isset($gauche)) echo $gauche; ?>
-               <? if(isset($centre)) echo $centre; ?>
-               <? if(isset($droite)) echo $droite; ?>
+               <?php if(isset($gauche)) echo $gauche; ?>
+               <?php if(isset($centre)) echo $centre; ?>
+               <?php if(isset($droite)) echo $droite; ?>
                <hr class="clearfloatBoth" />
             </div>
         </div>

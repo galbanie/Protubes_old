@@ -9,12 +9,12 @@
         <legend><?= $langForm['Connexion'];?></legend>
         <div id="form-div-email">
             <label><?= $langForm['email'];?></label>
-            <input id="email" type="text" name="connexion[email]" value="<?echo (isset($_REQUEST['connexion']['email']))? $_REQUEST['connexion']['email'] : ''; ?>" />
+            <input id="email" type="text" name="connexion[email]" value="<?php echo (isset($_REQUEST['connexion']['email']))? $_REQUEST['connexion']['email'] : ''; ?>" />
             <span class="tooltip"><?= $langForm['tooltipEmailCon'] ?></span>
         </div>
         <div id="form-div-password">
             <label><?= $langForm['password'];?></label>
-            <input id="password" type="password" name="connexion[password]" value="<?echo (isset($_REQUEST['connexion']['email']))? $_REQUEST['connexion']['password'] : ''; ?>" />
+            <input id="password" type="password" name="connexion[password]" value="<?php echo (isset($_REQUEST['connexion']['email']))? $_REQUEST['connexion']['password'] : ''; ?>" />
             <span class="tooltip"><?= $langForm['tooltipMpCon'] ?></span>
         </div>
         <div>
@@ -104,7 +104,7 @@
         var myForm = document.getElementById('formConnexion');
         /*var inputs = document.getElementsByTagName('input'),
             inputsLength = inputs.length;*/
-        var connectError = '<? if(isset($connectError)) echo $connectError;else echo ''; ?>';
+        var connectError = '<?php if(isset($connectError)) echo $connectError;else echo ''; ?>';
         
         //alert(connectError);
         //if(connectError !== ''){
@@ -136,7 +136,7 @@
     deactivateTooltips();
     
     window.onload = function(){
-        var connectError = '<? if(isset($connectError)) echo $connectError;else echo ''; ?>';
+        var connectError = '<?php if(isset($connectError)) echo $connectError;else echo ''; ?>';
         if(connectError !== ''){
             check['email']('email',connectError);
             check['password']('password',connectError);

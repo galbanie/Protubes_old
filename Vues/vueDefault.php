@@ -5,19 +5,19 @@ require(dirname(__FILE__).'/../Languages/lang_'.$_SESSION['lang'].'_inc.php');
 <?php $titrePage = $langTitre['default']; ?>
 
 <?php ob_start(); ?>
-    <? require dirname(__FILE__).'/'.$includeBtnUser; ?>
+    <?php require dirname(__FILE__).'/'.$includeBtnUser; ?>
 <?php $btnMembre = ob_get_clean(); ?>
 
 <?php ob_start(); ?>
     <div id="sidebarGauche">
-        <? require(dirname(__FILE__).'/'.$includeSidebarGauche); ?>
+        <?php require(dirname(__FILE__).'/'.$includeSidebarGauche); ?>
     </div>
 <?php $gauche = ob_get_clean(); ?>
 
 <?php ob_start(); ?>
     <div id="centre">
         <!--p>centre</p>
-        <p><? //print_r($_POST) ?></p-->
+        <p><?php //print_r($_POST) ?></p-->
         <div id="centreBlockVideopromo">
             <h2>Titre de la video</h2>
             <div id="videopromo">
@@ -56,7 +56,7 @@ require(dirname(__FILE__).'/../Languages/lang_'.$_SESSION['lang'].'_inc.php');
 
 <?php ob_start(); ?>
     <div id="sidebarDroit">
-        <? require(dirname(__FILE__).'/Sections/Modules/pub.php'); ?>
+        <?php require(dirname(__FILE__).'/Sections/Modules/pub.php'); ?>
     </div>
 <?php $droite = ob_get_clean(); ?>
 

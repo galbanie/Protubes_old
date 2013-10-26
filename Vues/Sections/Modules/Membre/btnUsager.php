@@ -8,7 +8,7 @@
     <ul id="ul1" class="ul-niveau1">
         <li class="li-1" >
             <a class="lien-img-membre" href="?page=membre">
-                <img class="img-user" src="<? if($_SESSION['membre']->getIdImage() !== null) echo 'getImage.php?id='.$_SESSION['membre']->getIdImage();else echo 'Ressources/Images/Profil_default.jpg'?>" />
+                <img class="img-user" src="<?php if($_SESSION['membre']->getIdImage() !== null) echo 'getImage.php?id='.$_SESSION['membre']->getIdImage();else echo 'Ressources/Images/Profil_default.jpg'?>" />
                 <span class="name-user"><?= $_SESSION['membre']->getIdentifiant(); ?></span>
             </a>
         </li>

@@ -16,9 +16,9 @@
     </ul>
 </div>
 <div id="panelMembreMain">
-    <? if(isset($infoBarMembre))require(dirname(__FILE__).'/'.$infoBarMembre); ?>
+    <?php if(isset($infoBarMembre))require(dirname(__FILE__).'/'.$infoBarMembre); ?>
     <div id="panelMembreContent">
-        <? if(isset($panelMembreContent))require(dirname(__FILE__).'/'.$panelMembreContent); ?>
+        <?php if(isset($panelMembreContent))require(dirname(__FILE__).'/'.$panelMembreContent); ?>
     </div>
 </div>
 <hr class="clear_both">
