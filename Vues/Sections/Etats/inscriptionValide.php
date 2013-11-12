@@ -1,4 +1,2 @@
-<h2>Votre compte est valide</h2>
-<p>
-    Votre compte est désormains valide.
-</p>
+<h2><?= $langMsg['etat03h2'];?></h2>
+<p><?= $langMsg['etat03p1'];?></p>

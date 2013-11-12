@@ -6,6 +6,6 @@
  */
 ?>
 <div>
-    <h2>Echec de l'inscription</h2>
-    <p>Une erreur c'est produit pendant l'enregistrement dans notre base de données</p>
+    <h2><?= $langMsg['msg06h2'];?></h2>
+    <p><?= $langMsg['msg06p1'];?></p>
 </div>

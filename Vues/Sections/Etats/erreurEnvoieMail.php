@@ -1,5 +1,2 @@
-<h2>un problème est survenue</h2>
-<p>
-    Impossible d'envoyer le mail de confirmation.<br />
-    Un problème est survenue lors de l'envoie du mail de confirmation.
-</p>
+<h2><?= $langMsg['etat01h2'];?></h2>
+<p><?= $langMsg['etat01p1'];?></p>

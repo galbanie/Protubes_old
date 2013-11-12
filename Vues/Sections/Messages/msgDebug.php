@@ -3,6 +3,6 @@
 
 ?>
 <div>
-    <h2>Debug Membre</h2>
+    <h2><?= $langMsg['msg04p1'];?></h2>
     <p><?= $debug ?></p>   
 </div>

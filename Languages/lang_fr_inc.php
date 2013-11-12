@@ -59,7 +59,32 @@ $langMsg = array(   "msg01h2" => "Je suis d&eacute;j&agrave; membre !",
                     "msg03h2" => "Que les membres peuvent ... ",
                     "msg03p1" => "Vous desirez publier des vid&eacute;os sur Protubes?<br />
         C'est gratuit ! Vous devez juste &ecirc;tre membre pour y parvenir. 
-        Si vous &ecirc;tes d&eacute;j&agrave; un membre, connectez-vous !");
+        Si vous &ecirc;tes d&eacute;j&agrave; un membre, connectez-vous !",
+                    "msg04h2" => "Debug Membre",
+    
+                    "msg05h2" => "Erreur de formulaire",
+    
+                    "msg06h2" => "Echec de l'inscription",
+                    "msg06p1" => "Une erreur c'est produit pendant l'enregistrement dans notre base de données",                  
+                    "msg07h2" => "Inscription reussie",
+                    "msg07p1" => "Bravo! vous voilà un membre de Protubes!!!<br />
+       Veuillez-vous connectez...",
+                    "msg08h2" => "Une taille maximale?!",
+                    "msg08hp1" => "Evidement! la taille limite des vidéos chargées est de 100 Mo.",
+                    "msg09h2" => "Quel type de vidéo?!",
+                    "msg09hp1" => "Vous pouvez charger les fichiers de type : Avi, Mov, Mpeg, Flv.",
+                    "etat01h2" => "un problème est survenue",
+                    "etat01p1" => "Impossible d'envoyer le mail de confirmation.<br />
+        Un problème est survenue lors de l'envoie du mail de confirmation.",
+                    "etat02h2" => "Inscription Invalide",
+                    "etat02p1" => "Vous n'avez pas validé votre compte chez protubes.<br />
+        Nous vous avons précédement envoyé un email à l'adresse que vous nous avez fournie.<br />
+        Si vous n'avez reçu aucun email de protubes,",
+                    "etat02p2" => "pour que nous vous l'envoyons de nouveau.",
+                    "etat03h2" => "Votre compte est valide",
+                    "etat03p1" => "Votre compte est désormains valide.",
+                    "etat04h2" => "Validez votre compte",
+                    "etat04p1" => "Un mail vous a été envoyé à l'adresse mail que vous avez renseigné.");
 
 $langErreur = array();
 

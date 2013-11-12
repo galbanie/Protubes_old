@@ -6,7 +6,6 @@
  */
 ?>
 <div>
-    <h2>Inscription Réussie</h2>
-    <p>Bravo! vous voilà un membre de Protubes!!!
-       Veillez-vous connectez...</p>
+    <h2><?= $langMsg['msg07h2'];?></h2>
+    <p><?= $langMsg['msg07p1'];?></p>
 </div>

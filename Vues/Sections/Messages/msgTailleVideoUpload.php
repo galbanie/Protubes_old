@@ -7,6 +7,6 @@
 ?>
 
 <div>
-    <h3>Une taille maximale?!</h3>
-    <p>Evidement! la taille limite des vidéos chargées est de 100 Mo.</p>
+    <h3><?= $langMsg['msg08h2'];?></h3>
+    <p><?= $langMsg['msg08p1'];?></p>
 </div>

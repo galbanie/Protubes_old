@@ -6,6 +6,6 @@
  */
 ?>
 <div>
-    <h2>Erreur de Formulaire</h2>
+    <h2><?= $langMsg['msg05h2'];?></h2>
     <p><?= $erreurForm ?></p>   
 </div>

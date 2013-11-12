@@ -7,6 +7,6 @@
 ?>
 
 <div>
-    <h3>Quel type de vidéo?!</h3>
-    <p>Vous pouvez charger les fichiers de type : Avi, Mov, Mpeg, Flv.</p>
+    <h3><?= $langMsg['msg09h2'];?></h3>
+    <p><?= $langMsg['msg09p1'];?></p>
 </div>

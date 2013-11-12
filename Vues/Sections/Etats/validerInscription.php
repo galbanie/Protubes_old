@@ -1,4 +1,2 @@
-<h2>Validez votre compte</h2>
-<p>
-    Un mail vous a été envoyé à l'adresse mail que vous avez renseigné.
-</p>
+<h2><?= $langMsg['etat04h2'];?></h2>
+<p><?= $langMsg['etat04p1'];?></p>

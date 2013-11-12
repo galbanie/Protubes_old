@@ -59,7 +59,32 @@ $langMsg = array(   "msg01h2" => "Already a member !",
                     "msg03h2" => "Only members can ... ",
                     "msg03p1" => "Do you want to publish a video on Protubes?<br />
         It's free ! You only have to become a member. 
-        If you already have an account, just connect youself !");
+        If you already have an account, just connect youself !",
+                    "msg04h2" => "Debug Member",
+                    
+                    "msg05h2" => "Error form",
+                        
+                    "msg06h2" => "Registration failed",
+                    "msg06p1" => "An error occured during the registration in our database",   
+                    "msg07h2" => "Registration successful",
+                    "msg07p1" => "Congratulations!!! You're now a member of Protubes!<br />
+       Please login...",  
+                    "msg08h2" => "A maximum size?!",
+                    "msg08hp1" => "Of course! The size limit of uploaded videos is 100 Mb",
+                    "msg09h2" => "What type of video?!",
+                    "msg09hp1" => "You can load files of type: Avi, Mov, MPEG, FLV",
+                    "etat01h2" => "a problem has occured",
+                    "etat01p1" => "Could not send a confirmation email. <br />
+         An error has occurred while sending the confirmation email.",
+                    "etat02h2" => "Invalid registration",
+                    "etat02p1" => "You haven't validated your account with Protubes.<br />
+        We have previously sent you an email to the address you provided us.<br />
+        If you haven't received any e-mail from Protubes, ",
+                    "etat02p2" => "and we will send it back.",
+                    "etat03h2" => "Your account is valid",
+                    "etat03p1" => "Your account is now valid.",
+                    "etat04h2" => "Validate your account",
+                    "etat04p1" => "An e-mail has been sent to the e-mail address that you provided us.");
 
 $langErreur = array();
 ?>
