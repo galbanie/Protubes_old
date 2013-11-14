@@ -126,6 +126,7 @@ class ControleurMembre extends Controleur{
             $this->affecterMessage();
             $this->genererVue('vueMembre');
         } catch(Exception $e){
+            echo $e->getMessage();
             $this->genererVue('vueError');
         }
     }

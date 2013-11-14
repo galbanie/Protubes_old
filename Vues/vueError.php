@@ -1,11 +1,11 @@
 <?php
-//require(dirname(__FILE__).'/../Languages/lang_'.$_SESSION['lang'].'_inc.php'); 
+require(dirname(__FILE__).'/../Languages/lang_'.$_SESSION['lang'].'_inc.php');
 ?>
 
 <?php //$titrePage = $langTitre['erreur']; ?>
 
 <?php ob_start(); ?>
-    <?php //require(dirname(__FILE__).'/'.$includeBtnUser); ?>
+    <?php require dirname(__FILE__).'/'.$includeBtnUser; ?>
 <?php $btnMembre = ob_get_clean(); ?>
 
 <?php ob_start(); ?>

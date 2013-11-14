@@ -77,7 +77,7 @@ class MembreManager extends DAO {
                 return $membre;
             }			
             //$requete>closeCursor();
-            return null;
+            return false;
         } catch (Exception $e) {
             TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
             return false;
