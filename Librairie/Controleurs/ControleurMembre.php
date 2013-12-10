@@ -197,8 +197,8 @@ class ControleurMembre extends Controleur{
             //on intègre les informations du membre dans le mail y compris le lien de validation
             $message = sprintf($message,$membre->getPrenom(),$membre->getNom(),$urls['local'],$lienConfirm);
             
-            $message =  eregi_replace('[\]', '', $message);
-            //$message = preg_replace('/\\\\/', '', $message);
+            //$message =  eregi_replace('[\]', '', $message);
+            $message = preg_replace('/\/i', '', $message);
             
             $mail->SetFrom('admin@protubes.com', 'Administrateur');
             $mail->AddAddress($membre->getEmail(), $membre->getPrenom().' '.$membre->getNom());

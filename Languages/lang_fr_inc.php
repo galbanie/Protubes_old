@@ -70,9 +70,9 @@ $langMsg = array(   "msg01h2" => "Je suis d&eacute;j&agrave; membre !",
                     "msg07p1" => "Bravo! vous voilà un membre de Protubes!!!<br />
        Veuillez-vous connectez...",
                     "msg08h2" => "Une taille maximale?!",
-                    "msg08hp1" => "Evidement! la taille limite des vidéos chargées est de 100 Mo.",
+                    "msg08p1" => "Evidement! la taille limite des vidéos chargées est de 100 Mo.",
                     "msg09h2" => "Quel type de vidéo?!",
-                    "msg09hp1" => "Vous pouvez charger les fichiers de type : Avi, Mov, Mpeg, Flv.",
+                    "msg09p1" => "Vous pouvez charger les fichiers de type : Avi, Mov, Mpeg, Flv.",
                     "etat01h2" => "un problème est survenue",
                     "etat01p1" => "Impossible d'envoyer le mail de confirmation.<br />
         Un problème est survenue lors de l'envoie du mail de confirmation.",
