@@ -198,7 +198,7 @@ class ControleurMembre extends Controleur{
             $message = sprintf($message,$membre->getPrenom(),$membre->getNom(),$urls['local'],$lienConfirm);
             
             //$message =  eregi_replace('[\]', '', $message);
-            $message = preg_replace('/\/i', '', $message);
+            $message = preg_replace("/[\\\\]/i", '', $message);
             
             $mail->SetFrom('admin@protubes.com', 'Administrateur');
             $mail->AddAddress($membre->getEmail(), $membre->getPrenom().' '.$membre->getNom());

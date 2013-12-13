@@ -7,7 +7,7 @@
 ?>
 
 <div id="uploadStartingBox">
-    <div class="container">
+    <!--div class="container">
             <h2>You can select the video and click Upload button</h2>
             <div class="upload_form_cont">
                 <form id="upload_form" enctype="multipart/form-data" method="post" action="Outils/upload.php">
@@ -43,7 +43,11 @@
                     </div>
                 </form>
 
-                <!--img id="preview" /-->
+                <!--img id="preview" />
             </div>
-        </div>
+        </div-->
+        <input type="file" id="fileElem" multiple="true" accept="image/*" onchange="handleFiles(this.files)"> 
+	<span style="font-size:14px;color: #1F6289;font-weight:bold;">Browse and select OR Drop file below</span> 
+	<div id="dropbox">Drag and Drop Files Here</div>
+	<div class="upload-progress"></div>
 </div>
