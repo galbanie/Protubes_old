@@ -1,0 +1,18 @@
+@startuml
+    hide footbox
+    
+    actor Membre
+    participant Protubes << System >>
+
+    Membre -> Protubes : demande formulaire(inscription)
+    Protubes -> Membre : retourne formulaire
+    Membre -> Protubes : requete inscription(email,password)
+
+    alt inscription valide
+        Protubes --> Membre : Message de validation du compte par mail
+    else inscription refuse
+        Protubes --> Membre : Message d'echec information exist dans DataBase
+        'Protubes -> Membre : Redirection formulaire(connexion)
+    end
+
+@enduml
