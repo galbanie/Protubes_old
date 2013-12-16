@@ -37,6 +37,12 @@ class ControleurMembre extends Controleur{
                             Donnees::ajouterValeur('membreGestion.php','panelMembreContent');
                         break;
                         case "settings":
+                            if(isset($_REQUEST['form']) && $_REQUEST['form'] == 'reglage'){
+                                
+                            }
+                            
+                            $this->actualisationVueReglage();
+                            
                             Donnees::ajouterValeur('membreReglage.php','panelMembreContent');
                         break;
                         case "deconnexion":
@@ -213,6 +219,47 @@ class ControleurMembre extends Controleur{
         }
         
     }
+    
+    protected function actualisationVueReglage(){
+        // on selectionne la valeur newsletter du compte
+        if($_SESSION['compte']->isNewsletter()){
+            Donnees::ajouterValeur('checked','newsletterOui');
+            Donnees::ajouterValeur('','newsletterNon');
+        }
+        else{
+            Donnees::ajouterValeur('','newsletterOui');
+            Donnees::ajouterValeur('checked','newsletterNon');
+        }
+        
+        if($_SESSION['compte']->isPermettreRechercheMembre()){
+            Donnees::ajouterValeur('checked','permettreOui');
+            Donnees::ajouterValeur('','permettreNon');
+        }
+        else{
+            Donnees::ajouterValeur('','permettreOui');
+            Donnees::ajouterValeur('checked','permettreNon');
+        }
+        
+        if($_SESSION['compte']->getLangueDefault() == 'fr'){
+            Donnees::ajouterValeur('selected','langDefFr');
+            Donnees::ajouterValeur('','langDefEn');
+        }
+        else if($_SESSION['compte']->getLangueDefault() == 'en'){
+            Donnees::ajouterValeur('','langDefFr');
+            Donnees::ajouterValeur('selected','langDefEn');
+        }
+        
+        if($_SESSION['compte']->getConfidentialiteDefault() == 'public'){
+            Donnees::ajouterValeur('selected','confiDefPublic');
+            Donnees::ajouterValeur('','confiDefPrivate');
+        }
+        else if($_SESSION['compte']->getConfidentialiteDefault() == 'private'){
+            Donnees::ajouterValeur('','confiDefPublic');
+            Donnees::ajouterValeur('selected','confiDefPrivate');
+        }
+        
+    }
+    
 }
 
 ?>
