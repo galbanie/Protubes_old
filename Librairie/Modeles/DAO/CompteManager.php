@@ -155,12 +155,13 @@ class CompteManager extends DAO{
                      idMembre = :idM WHERE id = :id";
             /* @var $requete PDOStatement */
             $requete = $this->bd->prepare($sql);
-            $requete->bindValue(':actif',$objet->isActif(),PDO::PARAM_BOOL);
-            $requete->bindValue(':news',$objet->isNewsletter(),PDO::PARAM_BOOL);
-            $requete->bindValue(':lang',$objet->getLangueDefault());
-            $requete->bindValue(':conf',$objet->getConfidentialiteDefault());
-            $requete->bindValue(':permRech',$objet->isPermettreRechercheMembre());
-            $requete->bindValue(':idM',$objet->getIdMembre());
+            $requete->bindValue(':actif',$subject->isActif(),PDO::PARAM_BOOL);
+            $requete->bindValue(':news',$subject->isNewsletter(),PDO::PARAM_BOOL);
+            $requete->bindValue(':lang',$subject->getLangueDefault());
+            $requete->bindValue(':conf',$subject->getConfidentialiteDefault());
+            $requete->bindValue(':permRech',$subject->isPermettreRechercheMembre());
+            $requete->bindValue(':idM',$subject->getIdMembre());
+            $requete->bindValue(':id',$subject->getId());
 
             $requete->execute();
             return $this->bd->lastInsertId();

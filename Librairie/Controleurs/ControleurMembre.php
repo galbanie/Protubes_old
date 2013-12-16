@@ -63,6 +63,17 @@ class ControleurMembre extends Controleur{
                 }
             }
             else{
+                if(isset($_REQUEST['reauth'])){
+                    if(isset($_SESSION['membre'])){
+                        if($_SESSION['membre']->getId() == Crypteur::getCrypteur()->decode($_REQUEST['reauth'])){
+                            if($this->envoieMailInscription($_SESSION['membre'])) Donnees::ajouterValeur('validerInscription','etat');
+                            else Donnees::ajouterValeur('erreurEnvoieMail','etat');
+                        }
+                    }
+                    else{
+                        
+                    }
+                }
                 if(isset($_POST['connexion'])){
                     if(!empty($_POST['connexion']['email']) && !empty($_POST['connexion']['password'])){
                         if(filter_var($_POST['connexion']['email'], FILTER_VALIDATE_EMAIL)){
@@ -74,7 +85,14 @@ class ControleurMembre extends Controleur{
                                     //$_SESSION['membre']->attach($this->membreManager);
                                     $_SESSION['compte'] = $compte;
                                     //$_SESSION['compte']->attach($this->compteManager);
-                                    if(!$_SESSION['compte']->isActif()) Donnees::ajouterValeur('inscriptionInvalide','etat');
+                                    if(!$_SESSION['compte']->isActif()){
+                                        Donnees::ajouterValeur('inscriptionInvalide','etat');
+                                        // on recupère l'url racine du site dans les configs
+                                        $urls = Config::getConfig('url');
+                                        // on génère le lien de validation à partir de l'url
+                                        $lienReConfirm = $urls['local'].'/?page=membre&reauth='.Crypteur::getCrypteur()->code($_SESSION['membre']->getId());
+                                        Donnees::ajouterValeur($lienReConfirm, 'lienReConf');
+                                    }
                                     else{
                                         header("Location: ?page=membre");
                                         exit();
