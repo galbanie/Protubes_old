@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.8.1deb1
+-- version 4.0.10
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Lun 07 Octobre 2013 à 19:10
--- Version du serveur: 5.5.32-0ubuntu0.13.04.1
--- Version de PHP: 5.4.9-4ubuntu2.3
+-- Généré le: Mar 17 Décembre 2013 à 19:13
+-- Version du serveur: 5.6.12-log
+-- Version de PHP: 5.4.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `abonner`
 --
 
+DROP TABLE IF EXISTS `abonner`;
 CREATE TABLE IF NOT EXISTS `abonner` (
   `idMembre` int(11) NOT NULL,
   `idAbonne` int(11) NOT NULL,
@@ -37,24 +38,11 @@ CREATE TABLE IF NOT EXISTS `abonner` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ajouteImage`
+-- Structure de la table `appreciationcommentaire`
 --
 
-CREATE TABLE IF NOT EXISTS `ajouteImage` (
-  `idMembre` int(11) NOT NULL,
-  `idImage` int(11) NOT NULL,
-  `date` date NOT NULL,
-  PRIMARY KEY (`idMembre`,`idImage`),
-  KEY `idImage` (`idImage`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `appreciationCommentaire`
---
-
-CREATE TABLE IF NOT EXISTS `appreciationCommentaire` (
+DROP TABLE IF EXISTS `appreciationcommentaire`;
+CREATE TABLE IF NOT EXISTS `appreciationcommentaire` (
   `idCommentaire` int(11) NOT NULL,
   `idMembre` int(11) NOT NULL,
   `appreciation` tinyint(1) NOT NULL,
@@ -65,10 +53,11 @@ CREATE TABLE IF NOT EXISTS `appreciationCommentaire` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `appreciationVideo`
+-- Structure de la table `appreciationvideo`
 --
 
-CREATE TABLE IF NOT EXISTS `appreciationVideo` (
+DROP TABLE IF EXISTS `appreciationvideo`;
+CREATE TABLE IF NOT EXISTS `appreciationvideo` (
   `idVideo` int(11) NOT NULL,
   `idMembre` int(11) NOT NULL,
   `appreciation` tinyint(1) NOT NULL,
@@ -82,6 +71,7 @@ CREATE TABLE IF NOT EXISTS `appreciationVideo` (
 -- Structure de la table `catalogue`
 --
 
+DROP TABLE IF EXISTS `catalogue`;
 CREATE TABLE IF NOT EXISTS `catalogue` (
   `CategorieMere` varchar(140) NOT NULL,
   `CategorieFille` varchar(140) NOT NULL,
@@ -95,6 +85,7 @@ CREATE TABLE IF NOT EXISTS `catalogue` (
 -- Structure de la table `categorie`
 --
 
+DROP TABLE IF EXISTS `categorie`;
 CREATE TABLE IF NOT EXISTS `categorie` (
   `titre` varchar(140) NOT NULL,
   `description` text,
@@ -107,6 +98,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
 -- Structure de la table `commentaire`
 --
 
+DROP TABLE IF EXISTS `commentaire`;
 CREATE TABLE IF NOT EXISTS `commentaire` (
   `id` int(11) NOT NULL,
   `datePublication` date DEFAULT NULL,
@@ -125,6 +117,7 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
 -- Structure de la table `compte`
 --
 
+DROP TABLE IF EXISTS `compte`;
 CREATE TABLE IF NOT EXISTS `compte` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `actif` tinyint(1) NOT NULL,
@@ -135,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `compte` (
   `idMembre` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idUsager` (`idMembre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -143,6 +136,7 @@ CREATE TABLE IF NOT EXISTS `compte` (
 -- Structure de la table `contient`
 --
 
+DROP TABLE IF EXISTS `contient`;
 CREATE TABLE IF NOT EXISTS `contient` (
   `idSerie` int(11) NOT NULL,
   `idEpisode` int(11) NOT NULL,
@@ -154,18 +148,31 @@ CREATE TABLE IF NOT EXISTS `contient` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `image`
+-- Structure de la table `files`
 --
 
-CREATE TABLE IF NOT EXISTS `image` (
+DROP TABLE IF EXISTS `files`;
+CREATE TABLE IF NOT EXISTS `files` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) NOT NULL,
-  `taille` varchar(25) NOT NULL,
-  `type` varchar(25) NOT NULL,
-  `desc` varchar(100) NOT NULL,
-  `blob` blob NOT NULL,
+  `mime` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `data` longblob NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `filesmembre`
+--
+
+DROP TABLE IF EXISTS `filesmembre`;
+CREATE TABLE IF NOT EXISTS `filesmembre` (
+  `idMembre` int(10) NOT NULL,
+  `idFile` int(10) NOT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`idMembre`,`idFile`),
+  KEY `idFile` (`idFile`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -173,11 +180,12 @@ CREATE TABLE IF NOT EXISTS `image` (
 -- Structure de la table `membre`
 --
 
+DROP TABLE IF EXISTS `membre`;
 CREATE TABLE IF NOT EXISTS `membre` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(70) NOT NULL,
   `prenom` varchar(140) NOT NULL,
-  `idImage` int(11) DEFAULT NULL,
+  `image` int(10) DEFAULT NULL,
   `identifiant` varchar(140) NOT NULL,
   `email` varchar(210) NOT NULL,
   `password` varchar(140) NOT NULL,
@@ -188,8 +196,8 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `telephone` varchar(210) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `identifiant` (`identifiant`,`email`),
-  KEY `idImage` (`idImage`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  KEY `idImage` (`image`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 -- --------------------------------------------------------
 
@@ -197,6 +205,7 @@ CREATE TABLE IF NOT EXISTS `membre` (
 -- Structure de la table `serie`
 --
 
+DROP TABLE IF EXISTS `serie`;
 CREATE TABLE IF NOT EXISTS `serie` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(140) NOT NULL,
@@ -214,6 +223,7 @@ CREATE TABLE IF NOT EXISTS `serie` (
 -- Structure de la table `sessions`
 --
 
+DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE IF NOT EXISTS `sessions` (
   `idsession` varchar(32) NOT NULL,
   `expiration` int(11) NOT NULL,
@@ -227,10 +237,11 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 -- Structure de la table `video`
 --
 
+DROP TABLE IF EXISTS `video`;
 CREATE TABLE IF NOT EXISTS `video` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `datePublication` date DEFAULT NULL,
-  `idImage` int(11) DEFAULT NULL,
+  `cover` int(10) DEFAULT NULL,
   `chemin` varchar(210) DEFAULT NULL,
   `titre` varchar(140) NOT NULL,
   `description` text,
@@ -238,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `video` (
   `nbrVue` int(14) NOT NULL,
   `idMembre` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `idImage` (`idImage`),
+  KEY `idImage` (`cover`),
   KEY `idUser` (`idMembre`),
   KEY `categorie` (`categorie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -251,29 +262,22 @@ CREATE TABLE IF NOT EXISTS `video` (
 -- Contraintes pour la table `abonner`
 --
 ALTER TABLE `abonner`
-  ADD CONSTRAINT `abonner_ibfk_2` FOREIGN KEY (`idAbonne`) REFERENCES `membre` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `abonner_ibfk_1` FOREIGN KEY (`idMembre`) REFERENCES `membre` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `abonner_ibfk_1` FOREIGN KEY (`idMembre`) REFERENCES `membre` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `abonner_ibfk_2` FOREIGN KEY (`idAbonne`) REFERENCES `membre` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `ajouteImage`
+-- Contraintes pour la table `appreciationcommentaire`
 --
-ALTER TABLE `ajouteImage`
-  ADD CONSTRAINT `ajouteImage_ibfk_2` FOREIGN KEY (`idImage`) REFERENCES `image` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `ajouteImage_ibfk_1` FOREIGN KEY (`idMembre`) REFERENCES `membre` (`id`) ON DELETE CASCADE;
+ALTER TABLE `appreciationcommentaire`
+  ADD CONSTRAINT `appreciationcommentaire_ibfk_1` FOREIGN KEY (`idCommentaire`) REFERENCES `commentaire` (`id`),
+  ADD CONSTRAINT `appreciationcommentaire_ibfk_2` FOREIGN KEY (`idMembre`) REFERENCES `membre` (`id`);
 
 --
--- Contraintes pour la table `appreciationCommentaire`
+-- Contraintes pour la table `appreciationvideo`
 --
-ALTER TABLE `appreciationCommentaire`
-  ADD CONSTRAINT `appreciationCommentaire_ibfk_1` FOREIGN KEY (`idCommentaire`) REFERENCES `commentaire` (`id`),
-  ADD CONSTRAINT `appreciationCommentaire_ibfk_2` FOREIGN KEY (`idMembre`) REFERENCES `membre` (`id`);
-
---
--- Contraintes pour la table `appreciationVideo`
---
-ALTER TABLE `appreciationVideo`
-  ADD CONSTRAINT `appreciationVideo_ibfk_1` FOREIGN KEY (`idVideo`) REFERENCES `video` (`id`),
-  ADD CONSTRAINT `appreciationVideo_ibfk_2` FOREIGN KEY (`idMembre`) REFERENCES `membre` (`id`);
+ALTER TABLE `appreciationvideo`
+  ADD CONSTRAINT `appreciationvideo_ibfk_1` FOREIGN KEY (`idVideo`) REFERENCES `video` (`id`),
+  ADD CONSTRAINT `appreciationvideo_ibfk_2` FOREIGN KEY (`idMembre`) REFERENCES `membre` (`id`);
 
 --
 -- Contraintes pour la table `catalogue`
@@ -303,10 +307,17 @@ ALTER TABLE `contient`
   ADD CONSTRAINT `contient_ibfk_2` FOREIGN KEY (`idEpisode`) REFERENCES `video` (`id`);
 
 --
+-- Contraintes pour la table `filesmembre`
+--
+ALTER TABLE `filesmembre`
+  ADD CONSTRAINT `filesmembre_ibfk_2` FOREIGN KEY (`idFile`) REFERENCES `files` (`id`),
+  ADD CONSTRAINT `filesmembre_ibfk_1` FOREIGN KEY (`idMembre`) REFERENCES `membre` (`id`);
+
+--
 -- Contraintes pour la table `membre`
 --
 ALTER TABLE `membre`
-  ADD CONSTRAINT `membre_ibfk_1` FOREIGN KEY (`idImage`) REFERENCES `image` (`id`);
+  ADD CONSTRAINT `membre_ibfk_1` FOREIGN KEY (`image`) REFERENCES `files` (`id`);
 
 --
 -- Contraintes pour la table `serie`
@@ -318,7 +329,7 @@ ALTER TABLE `serie`
 -- Contraintes pour la table `video`
 --
 ALTER TABLE `video`
-  ADD CONSTRAINT `video_ibfk_1` FOREIGN KEY (`idImage`) REFERENCES `image` (`id`),
+  ADD CONSTRAINT `video_ibfk_1` FOREIGN KEY (`cover`) REFERENCES `files` (`id`),
   ADD CONSTRAINT `video_ibfk_3` FOREIGN KEY (`categorie`) REFERENCES `categorie` (`titre`),
   ADD CONSTRAINT `video_ibfk_4` FOREIGN KEY (`idMembre`) REFERENCES `membre` (`id`);
 
