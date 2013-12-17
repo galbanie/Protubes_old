@@ -4,9 +4,9 @@
     actor Membre
     participant Protubes << System >>
 
-    Membre -> Protubes : demande formulaire(inscription)
-    Protubes -> Membre : retourne formulaire
-    Membre -> Protubes : requete inscription(email,password)
+    Membre -> Protubes : demandeFormulaire(inscription)
+    Protubes -> Membre : returnFormulaire
+    Membre -> Protubes : requeteInscription(informations)
 
     alt inscription valide
         Protubes --> Membre : Message de validation du compte par mail

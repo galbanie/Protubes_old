@@ -69,6 +69,7 @@
 }
 
 #membre-section-msg{
+    /*width: 399px; haute resolution*/
     width: 399px;
     padding: 0 10px;
 }
@@ -104,7 +105,8 @@
 }
 
 #membre-section-form{
-    width: 690px;
+    /*width: 690px; haute resolution*/
+    width: 590px;
     border-width: 0 0 0 1px;
     border-style: solid;
     border-color: #E4E4E4;
@@ -133,7 +135,8 @@
 }
 
 #membre-section-form div input{
-    width: 640px;
+    /*width: 640px;*/
+    width: 95%;
     font-size: large;
     margin: 0 10px;
 }
@@ -565,13 +568,13 @@
     float: left;
     display: inline-block;
     margin-top: 5px;
-    margin-left: 25%;
+    margin-left: 20%;
 }
 
 #informationProfileMembre >div>div+div{
     float: right;
      margin-left: 0 !important;
-     margin-right: 25%;
+     margin-right: 20%;
 }
 
 #informationProfileMembre div #infoNomPrenom{
@@ -618,6 +621,7 @@
 #profileMembreAbonnement{
     width: 48.5%;
     height: 70px;
+    margin-left: 5px;
     border: 1px solid #CCC;
 }
 
@@ -629,7 +633,7 @@
 }
 
 #information1{
-    width: 70%;
+    width: 65%;
     margin-left: 30px;
 }
 
@@ -664,7 +668,7 @@
 }
 
 #information2{
-    width: 70%;
+    width: 65%;
     margin-left: 20px;
 }
 

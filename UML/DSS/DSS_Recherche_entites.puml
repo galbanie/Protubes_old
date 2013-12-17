@@ -1,0 +1,30 @@
+@startuml
+    hide footbox
+    
+    actor Membre
+    participant Protubes << System >>
+    actor Jean
+    
+    loop
+        alt rapide
+            Membre -> Protubes : rechercheRapide(motCle)
+        else avancee
+            Membre -> Protubes : rechercheAvancee(parametres)
+        end
+
+        alt echec
+            break
+                Protubes --> Membre : Aucun resultat trouve
+            end
+        else succes
+            Protubes --> Membre : Resultat trouve
+        end
+
+        Membre -> Protubes : selectionResultat(o)
+        Protubes --> Membre : Apercu detaille
+
+        
+        
+    end
+
+@enduml

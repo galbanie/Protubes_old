@@ -36,9 +36,12 @@
             </div>
 
         </div>
+        
+        <div>
         <input type="button" id="membreProfileBtnModif" class="button" value="Modifier vos informations" onclick="document.location.href = '?page=membre&action=profile&modif=profile';" />
+        </div>
     </div>
-
+    <hr class="clearfloatBoth" />
     <div id="divProfileMembreAbonner">
         <div id="profileMembreAbonnement">
             

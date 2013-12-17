@@ -4,9 +4,9 @@
     actor Membre
     participant Protubes << System >>
 
-    Membre -> Protubes : demande formulaire(connexion)
-    Protubes -> Membre : retourne formulaire
-    Membre -> Protubes : requete connexion(email,password)
+    Membre -> Protubes : demandeFormulaire(connexion)
+    Protubes -> Membre : returnFormulaire
+    Membre -> Protubes : requeteConnexion(email,password)
 
     alt reussie
         Protubes -> Membre : connexion reussie
