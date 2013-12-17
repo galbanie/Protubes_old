@@ -51,6 +51,9 @@ class ControleurFrontal extends Controleur {
             Donnees::ajouterValeur('Sections/Modules/Membre/btnUsager.php', 'includeBtnUser');
             Donnees::ajouterValeur('Sections/Modules/Membre/zoneMembrePanel.php', 'includeSectionMembre');
             Donnees::ajouterValeur('Sections/Modules/Membre/sidebarGaucheMembre.php', 'includeSidebarGauche');
+            if(isset($_SESSION['image']) && $_SESSION['image'] !== $_SESSION['membre']->getImage()) {
+                $_SESSION['membre']->setImage($_SESSION['image']);
+            }
         }
         else{
             Donnees::ajouterValeur('Sections/Modules/NonMembre/btnSignIn.php', 'includeBtnUser');

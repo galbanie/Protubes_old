@@ -15,7 +15,7 @@ class MembreManager extends DAO {
     public function add($objet) {
         try {
              $sql = "INSERT INTO membre SET
-                     nom = :nom, prenom = :prenom,idImage = :im, identifiant = :identifiant,
+                     nom = :nom, prenom = :prenom,image = :im, identifiant = :identifiant,
                      email = :email, password = :password, dateNaissance = :dn,
                      dateInscription = :di, pays = :pays, codePostal = :cp,
                      telephone = :tel";
@@ -152,7 +152,7 @@ class MembreManager extends DAO {
     public function update(Observable $subject, $arg = null) {
         try {
             $sql = "UPDATE membre SET 
-                     nom = :nom, prenom = :prenom,idImage = :im, identifiant = :identifiant,
+                     nom = :nom, prenom = :prenom,image = :im, identifiant = :identifiant,
                      email = :email, password = :password, dateNaissance = :dn,
                      dateInscription = :di, pays = :pays, codePostal = :cp,
                      telephone = :tel WHERE id = :id";
@@ -161,7 +161,7 @@ class MembreManager extends DAO {
             $requete->bindValue(':id',$subject->getId());
             $requete->bindValue(':nom',$subject->getNom());
             $requete->bindValue(':prenom',$subject->getPrenom());
-            $requete->bindValue(':im',$subject->getIdImage());
+            $requete->bindValue(':im',$subject->getImage());
             $requete->bindValue(':identifiant',$subject->getIdentifiant());
             $requete->bindValue(':email',$subject->getEmail());
             $requete->bindValue(':password',$subject->getPassword());
@@ -174,6 +174,25 @@ class MembreManager extends DAO {
             $requete->execute();
             return true;
         } catch (Exception $e) {
+            TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
+            return false;
+        }
+    }
+    
+    public function addFileMembre($idMembre, $idFile, $date){
+        try{
+            $sql = "INSERT INTO filesmembre SET
+                     idMembre = :idM, idFile = :idF,date = :date";
+            /* @var $requete PDOStatement */
+            $requete = $this->bd->prepare($sql);
+            $requete->bindValue(':idM',$idMembre);
+            $requete->bindValue(':idF',$idFile);
+            $requete->bindValue(':date',$date);
+            
+            $requete->execute();
+            return true;
+        }
+        catch (Exception $e){
             TraceErreur::ecrireLog('./log.txt',$e->getTraceAsString(),"MembreManager", true);
             return false;
         }

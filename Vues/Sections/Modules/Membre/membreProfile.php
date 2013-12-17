@@ -3,7 +3,7 @@
 <div id="divProfileMembre">
 
     <div id="imageMembreProfile">
-        <img id="imageProfil" src="<?php if($_SESSION['membre']->getIdImage() !== null) echo 'Image.php?id='.$_SESSION['membre']->getIdImage();else echo 'Ressources/Images/Profil_default.jpg';?>" />
+        <img id="imageProfil" src="<?php if($_SESSION['membre']->getImage() !== null) echo 'getImage.php?id='.$_SESSION['membre']->getImage();else echo 'Ressources/Images/Profil_default.jpg';?>" />
     </div>
 
     <div id="informationProfileMembre">

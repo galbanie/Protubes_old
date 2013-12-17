@@ -3,6 +3,8 @@ require dirname(__FILE__).'/Librairie/Autoloader.php';
     
 new Autoloader();
 
+session_start();
+
 function bytesToSize1024($bytes, $precision = 2) {
     $unit = array('B','KB','MB');
     return @round($bytes / pow(1024, ($i = floor(log($bytes, 1024)))), $precision).' '.$unit[$i];
@@ -11,30 +13,29 @@ function bytesToSize1024($bytes, $precision = 2) {
 $fileName = $_FILES['fichier']['name'];
 $fileType = $_FILES['fichier']['type'];
 $fileSize = bytesToSize1024($_FILES['fichier']['size'], 1);
-
-var_dump($_FILES);
+//echo $fileName;
+//var_dump($_FILES);
 //var_dump($_REQUEST);
 
 if(is_uploaded_file($_FILES['fichier']['tmp_name'])){
     if(Image::isImageType($fileType)){
-        $image = new Image(null,$fileName,$fileSize,$fileType,"",file_get_contents($_FILES['fichier']['tmp_name']));
-        var_dump($image);
-        $imageManager = new ImageManager(DataBase::instancie());
         
-        $idImage = $imageManager->add($image);
+        $file = new FileManager(DataBase::instancie());
+        
+        $idImage = $file->insertBlob($_FILES['fichier']['tmp_name'], $fileType);
+        
+        //echo $idImage;
+        
         if($idImage && $idImage !== 0){
-            $image->setId($idImage);
             $date = new DateTime('NOW');
-            $imageManager->addImageMembre($_REQUEST['idMembre'], $image->getId(), $date->format('d/m/Y H:i:s'));
-
             $membreManager = new MembreManager(DataBase::instancie());
-            $membreTemp = $membreManager->get('id',$_REQUEST['idMembre']);;
-            $membreTemp->setIdImage($image->getId());
+            $membreTemp = $membreManager->get('id',$_REQUEST['idMembre']);
+            $membreTemp->setImage($idImage);
+            $membreManager->addFileMembre($membreTemp->getId(), $idImage, $date->format('d/m/Y H:i:s'));
             $membreManager->update($membreTemp);
-            
-            var_dump($image);
-
-            echo $image->getId();
+            $_SESSION['image'] = $idImage;
+            $resultat = $file->selectBlob($idImage);
+            echo Base64EncodeImage::base64_encode_image_binary($resultat["data"], $resultat["mime"]);
         }
     }
     else{

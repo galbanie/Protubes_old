@@ -14,16 +14,25 @@ class ImageManager extends DAO {
     /* @var $objet Image*/
     public function add($objet) {
         try {
-             $sql = "INSERT INTO image SET
+             /*$sql = "INSERT INTO image SET
                      nom = :nom, taille = :taille,type = :type,
-                     desc = :desc, blob = :blob";
+                     desc = :desc, blob = :blob";*/
+             $sql = "INSERT INTO image
+                     (nom,taille,type,desc,blob) VALUES (?,?,?,?,?)";
             /* @var $requete PDOStatement */
-            $requete = $this->bd->prepare($sql);
+            /*$requete = $this->bd->prepare($sql);
             $requete->bindValue(':nom',$objet->getNom());
             $requete->bindValue(':taille',$objet->getTaille());
             $requete->bindValue(':type',$objet->getType());
             $requete->bindValue(':desc',$objet->getDesc());
-            $requete->bindValue(':blob',$objet->getBlob());
+            $requete->bindValue(':blob',addslashes($objet->getBlob()),PDO::PARAM_LOB);*/
+            
+            $requete = $this->bd->prepare($sql);
+            $requete->bindValue(1,$objet->getNom());
+            $requete->bindValue(2,$objet->getTaille());
+            $requete->bindValue(3,$objet->getType());
+            $requete->bindValue(4,$objet->getDesc());
+            $requete->bindValue(5,$objet->getBlob(),PDO::PARAM_LOB);
 
             $requete->execute();
             return $this->bd->lastInsertId();
@@ -153,7 +162,7 @@ class ImageManager extends DAO {
             $requete->bindValue(':taille',$subject->getTaille());
             $requete->bindValue(':type',$subject->getType());
             $requete->bindValue(':desc',$subject->getDesc());
-            $requete->bindValue(':blob',  addslashes($subject->getBlob()));
+            $requete->bindValue(':blob',  addslashes($subject->getBlob()),PDO::PARAM_LOB);
 
             $requete->execute();
             return true;
@@ -165,7 +174,7 @@ class ImageManager extends DAO {
     
     public function addImageMembre($idMembre,$idImage,$date){
         try{
-            $sql = "INSERT INTO imageMembre SET
+            $sql = "INSERT INTO ajouteimage SET
                      idMembre = :idM, idImage = :idI,date = :date";
             /* @var $requete PDOStatement */
             $requete = $this->bd->prepare($sql);

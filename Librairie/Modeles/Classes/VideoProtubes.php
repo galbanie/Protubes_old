@@ -7,17 +7,17 @@
  */
 class VideoProtubes extends Modele implements Appreciable {
     private $datePublication;
-    private $idImage;
+    private $cover;
     private $chemin;
     private $titre;
     private $description;
     private $categorie;
     private $idUser;
     
-    function __construct($id = null, $datePublication = "", $idImage = null, $chemin = "", $titre = "", $description = "", $categorie = "", $idUser = null) {
+    function __construct($id = null, $datePublication = "", $cover = null, $chemin = "", $titre = "", $description = "", $categorie = "", $idUser = null) {
         $this->setId($id);
         $this->setDatePublication($datePublication);
-        $this->setIdImage($idImage);
+        $this->setCover($cover);
         $this->setChemin($chemin);
         $this->setTitre($titre);
         $this->setDescription($description);
@@ -34,12 +34,12 @@ class VideoProtubes extends Modele implements Appreciable {
         if($notify) $this->notifyObservers ();
     }
 
-    public function getIdImage() {
-        return $this->image;
+    public function getCover() {
+        return $this->cover;
     }
 
-    public function setIdImage($idImage,$notify = false) {
-        $this->image = $idImage;
+    public function setCover($cover,$notify = false) {
+        $this->cover = $cover;
         if($notify) $this->notifyObservers ();
     }
 

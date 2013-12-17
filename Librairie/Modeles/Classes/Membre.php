@@ -9,7 +9,7 @@ class Membre extends Modele{
     
     private $nom;
     private $prenom;
-    private $idImage;
+    private $image;
     private $identifiant;
     private $email;
     private $password;
@@ -19,11 +19,11 @@ class Membre extends Modele{
     private $codePostal;
     private $telephone;
     
-    function __construct($id = null, $nom = "", $prenom = "", $idImage = null, $identifiant = "", $email = "",$password = "", $dateNaissance = "", $dateInscription = "", $pays = "", $codePostal = "", $telephone = "") {
+    function __construct($id = null, $nom = "", $prenom = "", $image = null, $identifiant = "", $email = "",$password = "", $dateNaissance = "", $dateInscription = "", $pays = "", $codePostal = "", $telephone = "") {
         $this->setId($id);
         $this->setNom($nom);
         $this->setPrenom($prenom);
-        $this->setIdImage($idImage);
+        $this->setImage($image);
         $this->setIdentifiant($identifiant);
         $this->setEmail($email);
         $this->setPassword($password);
@@ -52,12 +52,12 @@ class Membre extends Modele{
         if($notify) $this->notifyObservers ();
     }
 
-    public function getIdImage() {
-        return $this->idImage;
+    public function getImage() {
+        return $this->image;
     }
 
-    public function setIdImage($imageProfile,$notify = false) {
-        $this->idImage = $imageProfile;
+    public function setImage($imageProfile,$notify = false) {
+        $this->image = $imageProfile;
         if($notify) $this->notifyObservers ();
     }
     

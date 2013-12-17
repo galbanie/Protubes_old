@@ -1,5 +1,5 @@
 // Variables globales
-var iMaxFilesize = 256000; // 250 Kb max taille image
+var iMaxFilesize = 756000; // 750 Kb max taille image
 var vMaxFilesize = 104857600; // 100 Mb max taille video
 var timer = 0;
 
@@ -126,8 +126,12 @@ function updateProgressImage(){
 }
 
 function transfertCompleteImage(e){
-    alert(e.target.responseText);
-    document.imageProfil.src = "Ressources/Images/Profil_default.jpg";
+    //alert(e.target.responseText);
+    //document.imageProfil.src = "Ressources/Images/Profil_default.jpg";
+    
+    document.imageProfil.src = e.target.responseText;
+    document.imgUserEspMembre.src = e.target.responseText;
+    
     
 }
 
