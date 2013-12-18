@@ -23,7 +23,7 @@ class MembreManager extends DAO {
             $requete = $this->bd->prepare($sql);
             $requete->bindValue(':nom',$objet->getNom());
             $requete->bindValue(':prenom',$objet->getPrenom());
-            $requete->bindValue(':im',$objet->getIdImage());
+            $requete->bindValue(':im',$objet->getImage());
             $requete->bindValue(':identifiant',$objet->getIdentifiant());
             $requete->bindValue(':email',$objet->getEmail());
             $requete->bindValue(':password',$objet->getPassword());

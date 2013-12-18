@@ -1,15 +1,20 @@
 <h1 class="titreSectionMembre">Modification du profile</h1>
+<div id="fenetre-images-membre" style="display: none;">
+    <a id="close-win-img-member" href="#" class="icone-close close"></a>
+</div>
+
 <form name="form" method="POST" enctype="multipart/form-data" action="upload.php" style="display: none;">
     <input type="hidden" name="idMembre" value="<?= $_SESSION['membre']->getId();?>" />
     <input name="fichier" type="file" onchange="if(fichierSelected(this))demarrageChargement(document.form);" />
 </form>
+
 <form id="formProfileMembre" method="POST" action="">
     <div id="imageMembreProfile">
         <img id="imageProfil" name="imageProfil" src="<?php if($_SESSION['membre']->getImage() !== null) echo 'getImage.php?id='.$_SESSION['membre']->getImage();else echo 'Ressources/Images/Profil_default.jpg'?>" />
         <a id="lienSurImage" href="#" onclick="showHideElementBlock('divCHoixActionChangeImage');">Changer l'image</a>
         <div id="divCHoixActionChangeImage" style="display: none;">
             <a href="#" onclick="showHideElementBlock('divCHoixActionChangeImage');declencheChargement(document.forms['form']);">Charger depuis votre ordinateur</a>
-            <a href="#" onclick="showHideElementBlock('divCHoixActionChangeImage');">Choisir parmis vos images</a>
+            <a id="show-win-img-member" href="#" onclick="showHideElementBlock('divCHoixActionChangeImage');">Choisir parmis vos images</a>
         </div>
     </div>
     <div id="information1">

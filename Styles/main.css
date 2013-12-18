@@ -740,6 +740,28 @@
     margin: 5px auto 10px auto;
 }
 
+#fenetre-images-membre{
+    position: absolute;
+    top : 20%;
+    left : 25%;
+    z-index: 900;
+    width: 650px;
+    height: 500px;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+}
+
+#fenetre-images-membre .icone-close{
+    position: absolute;
+    display: block;
+    top : 5px;
+    right: 5px;
+    /*z-index: 901;*/
+    width: 20px;
+    height: 20px;
+    /*border: 1px solid #000000;*/
+}
+
 /* section Membre > General > Statistique */
 
 #membreGeneralstatistique{

@@ -2,12 +2,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="Ressources/Images/favicon.ico">
+        <link rel="icon" type="image/gif" href="Ressources/Images/animated_favicon1.gif">
         <link rel="stylesheet" type="text/css" href="Styles/base.css" media="all"/>
         <link rel="stylesheet" type="text/css" href="Styles/style.css" media="all"/>
         <link rel="stylesheet" type="text/css" href="Styles/header.css" media="all"/>
         <link rel="stylesheet" type="text/css" href="Styles/main.css" media="all"/>
         <link rel="stylesheet" type="text/css" href="Styles/footer.css" media="all"/>
-        <script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="Scripts/protubes.js"></script>
         <!--script type="text/javascript" src="Scripts/upload.js"></script-->
         <title><?= $titrePage ?></title>
