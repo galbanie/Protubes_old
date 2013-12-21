@@ -29,7 +29,7 @@ class ControleurMembre extends Controleur{
                             else{
                                 Donnees::ajouterValeur('membreProfile.php','panelMembreContent');
                             }
-                            $this->actualiserDonnees();
+                            //$this->actualiserDonnees();
                         break;
                         case "alerte":
                             Donnees::ajouterValeur('membreAlerte.php','panelMembreContent');
@@ -44,7 +44,7 @@ class ControleurMembre extends Controleur{
                             
                             $this->actualisationVueReglage();
                             
-                            $this->actualiserDonnees();
+                            //$this->actualiserDonnees();
                             
                             Donnees::ajouterValeur('membreReglage.php','panelMembreContent');
                         break;
@@ -206,10 +206,12 @@ class ControleurMembre extends Controleur{
         return false;
     }
     
-    protected function actualiserDonnees(){
+    /*protected function actualiserDonnees(){
         $_SESSION['membre'] = $this->membreManager->get('id', $_SESSION['membre']->getId());
         $_SESSION['compte'] = $this->compteManager->get('id', $_SESSION['compte']->getId());
-    }
+        
+     //ControleUpdate::add($this->membreManager->get('id', $_SESSION['membre']->getId()), 'membre');
+    }*/
     
     protected function verifierMembreExiste(){
         if($this->membreManager->get("email",$_POST['inscription']['email'])) return 2;

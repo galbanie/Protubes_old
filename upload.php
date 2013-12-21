@@ -3,7 +3,7 @@ require dirname(__FILE__).'/Librairie/Autoloader.php';
     
 new Autoloader();
 
-session_start();
+//session_start();
 
 function bytesToSize1024($bytes, $precision = 2) {
     $unit = array('B','KB','MB');
@@ -33,7 +33,9 @@ if(is_uploaded_file($_FILES['fichier']['tmp_name'])){
             $membreTemp->setImage($idImage);
             $membreManager->addFileMembre($membreTemp->getId(), $idImage, $date->format('d/m/Y H:i:s'));
             $membreManager->update($membreTemp);
-            $_SESSION['image'] = $idImage;
+            $membreTemp = $membreManager->get('id',$_REQUEST['idMembre']);
+            //$_SESSION['modif'] = true;
+            //ControleUpdate::add($membreTemp, 'membre');
             $resultat = $file->selectBlob($idImage);
             echo Base64EncodeImage::base64_encode_image_binary($resultat["data"], $resultat["mime"]);
         }

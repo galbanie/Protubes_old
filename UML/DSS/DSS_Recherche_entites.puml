@@ -3,7 +3,6 @@
     
     actor Membre
     participant Protubes << System >>
-    actor Jean
     
     loop
         alt rapide
@@ -22,9 +21,6 @@
 
         Membre -> Protubes : selectionResultat(o)
         Protubes --> Membre : Apercu detaille
-
-        
-        
     end
 
 @enduml

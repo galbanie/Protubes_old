@@ -4,13 +4,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="shortcut icon" href="Ressources/Images/favicon.ico">
         <link rel="icon" type="image/gif" href="Ressources/Images/animated_favicon1.gif">
-        <link rel="stylesheet" type="text/css" href="Styles/base.css" media="all"/>
-        <link rel="stylesheet" type="text/css" href="Styles/style.css" media="all"/>
-        <link rel="stylesheet" type="text/css" href="Styles/header.css" media="all"/>
-        <link rel="stylesheet" type="text/css" href="Styles/main.css" media="all"/>
-        <link rel="stylesheet" type="text/css" href="Styles/footer.css" media="all"/>
-        <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
-        <script type="text/javascript" src="Scripts/protubes.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/Base/base.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="css/Base/style.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="css/Base/header.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="css/Base/main.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="css/Base/footer.css" media="all"/>
+        <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script type="text/javascript" src="js/protubes.js"></script>
         <!--script type="text/javascript" src="Scripts/upload.js"></script-->
         <title><?= $titrePage ?></title>
     </head>

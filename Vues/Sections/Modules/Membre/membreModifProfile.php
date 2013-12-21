@@ -3,7 +3,8 @@
     <a id="close-win-img-member" href="#" class="icone-close close"></a>
 </div>
 
-<form name="form" method="POST" enctype="multipart/form-data" action="upload.php" style="display: none;">
+<form name="form" method="POST" enctype="multipart/form-data" action="?page=upload" style="display: none;">
+    <input type="hidden" name="form" value="addImage" />
     <input type="hidden" name="idMembre" value="<?= $_SESSION['membre']->getId();?>" />
     <input name="fichier" type="file" onchange="if(fichierSelected(this))demarrageChargement(document.form);" />
 </form>

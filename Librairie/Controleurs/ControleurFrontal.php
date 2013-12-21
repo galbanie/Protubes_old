@@ -15,6 +15,7 @@ class ControleurFrontal extends Controleur {
         try{
             $this->definirLangue();
             $this->verifierUsager();
+            
             /*$page = (isset($_REQUEST['page'])? $_REQUEST['page'] : 'default');
             ControleurFactory::getControleur($page)->executerAction();*/
             if(isset($_REQUEST['page'])){
@@ -61,6 +62,7 @@ class ControleurFrontal extends Controleur {
             Donnees::ajouterValeur('Sections/Modules/NonMembre/sidebarGauche.php', 'includeSidebarGauche');
         }
     }
+    
 }
 
 ?>
