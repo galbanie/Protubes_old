@@ -7,7 +7,7 @@
 */
 
 #global{
-    min-width: 1400px;
+    min-width: 1280px;
 }
 
 #principal{
@@ -29,8 +29,8 @@
 }
 
 #centre{
-    /*width: 632px;*/
-    width: 40%;
+    width: 632px;
+    /*width: 40%;*/
     min-height: 500px;
     border-width: 0 1px 1px 1px;
     border-style: solid;
@@ -46,8 +46,8 @@
 }
 
 #centreUnique{
-    /*width: 1110px;*/
-    width: 82%;
+    width: 1110px;
+    /*width: 82%;*/
     border-width: 0 1px 1px 1px;
     border-style: solid;
     border-color: #E4E4E4;
@@ -70,7 +70,7 @@
 
 #membre-section-msg{
     /*width: 399px; haute resolution*/
-    width: 399px;
+    width: 380px;
     padding: 0 10px;
 }
 

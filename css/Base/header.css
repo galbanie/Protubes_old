@@ -9,7 +9,7 @@
 header{
     background-image: url('images/Bg-header.png');
     height: 40px;
-    /*min-width: 1400px;*/
+    min-width: 1280px;
     padding: 10px 0;
     border-width: 1px 0 1px 0;
     border-color: #E4E4E4;
