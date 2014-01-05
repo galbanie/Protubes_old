@@ -12,7 +12,7 @@
     require_once 'Session.php';
     
     session_start();
-    
+    $_SESSION['form'] = "Connexion"; 
     $controleur = new ControleurFrontal();
     $controleur->routerRequete();
 ?>

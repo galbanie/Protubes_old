@@ -1,6 +1,6 @@
 <?php
 define("duree_session", get_cfg_var("session.gc_maxlifetime"));
-
+include_once './Librairie/Configuration/Config.php';
 $config = Config::getConfig("bd_local_native");
 
 $connexion = "";

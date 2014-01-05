@@ -68,6 +68,7 @@ hr{margin: 10px 0;}
 #global{
     position: relative;
     min-height: 80%;
+    margin : auto auto auto 10%;
 }
 
 input, textarea, select, .uneditable-input{height: 100%;}
