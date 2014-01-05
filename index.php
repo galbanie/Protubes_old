@@ -12,7 +12,10 @@
     require_once 'Session.php';
     
     session_start();
-    $_SESSION['form'] = "Connexion"; 
+    /*
+     * Voir la fonction alternerFormulaire() dans le contrôleur Membre
+     */
+    //$_SESSION['form'] = "Connexion"; 
     $controleur = new ControleurFrontal();
     $controleur->routerRequete();
 ?>

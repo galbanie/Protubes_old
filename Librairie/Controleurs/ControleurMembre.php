@@ -159,6 +159,7 @@ class ControleurMembre extends Controleur{
     }
     
     protected function alternerFormulaire(){
+        $_SESSION['form'] = "Connexion";
         if (!isset($_SESSION['form'])){
             $_SESSION['form'] = "Connexion";
         }
