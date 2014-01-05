@@ -1,0 +1,10 @@
+#RewriteEngine on
+#RewriteRule ^Languages /? [R]
+#RewriteRule ^Librairie /? [R]
+#RewriteRule ^Ressources /? [R]
+#RewriteRule ^UML /? [R]
+#RewriteRule ^Uploads /? [R]
+#RewriteRule ^Vues /? [R]
+#RewriteRule ^css /? [R]
+#RewriteRule ^development-bundle /? [R]
+#RewriteRule ^js /? [R]

@@ -28,6 +28,9 @@ class ControleurFrontal extends Controleur {
             else if (isset($_REQUEST['watch'])) {
                 ControleurFactory::getControleur('watch')->executerAction();
             }
+            else if (isset($_REQUEST['entity'])) {
+                ControleurFactory::getControleur('entity')->executerAction();
+            }
             else ControleurFactory::getControleur()->executerAction();
         } catch (Exception $e){
             $this->genererVue('vueError');

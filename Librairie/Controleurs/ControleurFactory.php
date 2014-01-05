@@ -14,6 +14,7 @@ class ControleurFactory {
             case 'watch'   : return new ControleurWatch();
             case 'membre'  : return new ControleurMembre();
             case 'upload'  : return new ControleurUpload();
+            case 'entity'  : return new ControleurEntity();
             case 'default' :
             default        : return new ControleurDefault();
         }
