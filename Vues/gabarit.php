@@ -2,21 +2,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="shortcut icon" href="Ressources/Images/favicon.ico">
-        <link rel="icon" type="image/gif" href="Ressources/Images/animated_favicon1.gif">
+        <link rel="shortcut icon" href="<?= $realpath ?>Ressources/Images/favicon.ico">
+        <link rel="icon" type="image/gif" href="<?= $realpath ?>Ressources/Images/animated_favicon1.gif">
         
-        <link rel="stylesheet" type="text/css" href="css/Base/base.css" media="all"/>
-        <link rel="stylesheet" type="text/css" href="css/Base/style.css" media="all"/>
-        <link rel="stylesheet" type="text/css" href="css/Base/header.css" media="all"/>
-        <link rel="stylesheet" type="text/css" href="css/Base/main.css" media="all"/>
-        <link rel="stylesheet" type="text/css" href="css/Base/pagination.css" media="all"/>
-        <link rel="stylesheet" type="text/css" href="css/Base/footer.css" media="all"/>
-        <link rel="stylesheet" type="text/css" href="css/protubes-theme/jquery-ui-1.10.3.custom.min.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="<?= $realpath ?>css/Base/base.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="<?= $realpath ?>css/Base/style.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="<?= $realpath ?>css/Base/header.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="<?= $realpath ?>css/Base/main.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="<?= $realpath ?>css/Base/pagination.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="<?= $realpath ?>css/Base/footer.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="<?= $realpath ?>css/protubes-theme/jquery-ui-1.10.3.custom.min.css" media="all"/>
         
-        <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
-        <script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-        <script src="js/protubes-jquery.js" type="text/javascript"></script>
-        <script src="js/protubes.js" type="text/javascript"></script>
+        <script src="<?= $realpath ?>js/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="<?= $realpath ?>js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+        <script src="<?= $realpath ?>js/protubes-jquery.js" type="text/javascript"></script>
+        <script src="<?= $realpath ?>js/protubes.js" type="text/javascript"></script>
         <!--script type="text/javascript" src="Scripts/upload.js"></script-->
         <title><?= $titrePage ?></title>
     </head>
@@ -25,7 +25,7 @@
             <!-- Logo-->
             <div id="logo">
                 <a href="index.php">
-                    <img alt="Protubes." src="Ressources/Images/Logo/Logo-Protubes.png" />
+                    <img alt="Protubes." src="<?= $realpath ?>Ressources/Images/Logo/Logo-Protubes.png" />
                 </a>
             </div>
             

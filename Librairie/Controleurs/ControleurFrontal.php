@@ -15,6 +15,8 @@ class ControleurFrontal extends Controleur {
         try{
             $this->definirLangue();
             $this->verifierUsager();
+            $realpath = Config::getConfig('url');
+            Donnees::ajouterValeur($realpath['local'], 'realpath');
             
             /*$page = (isset($_REQUEST['page'])? $_REQUEST['page'] : 'default');
             ControleurFactory::getControleur($page)->executerAction();*/

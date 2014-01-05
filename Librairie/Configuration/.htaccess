@@ -1,0 +1,8 @@
+#AuthUserFile /home/galba025/public_html/protubes/Librairie/Configuration/.htpasswd
+AuthUserFile C:\wamp\www\Protubes\Librairie\Configuration\.htpasswd
+AuthName "Zone protegee par mot de passe"
+AuthType Basic
+
+<limit GET POST>
+require valid-user
+</limit>
